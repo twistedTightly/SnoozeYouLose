@@ -8,3 +8,7 @@ Podfile.lock
 .DS_Store
 .DS_Store?
 
+
+# File with Venmo App Secret #
+##############################
+AppDelegate.m
