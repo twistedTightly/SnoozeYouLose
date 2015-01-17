@@ -14,6 +14,8 @@
 		32EF89CC1A6AEAD9001F7264 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89CB1A6AEAD9001F7264 /* Alarm.m */; };
 		32EF89D21A6AFC87001F7264 /* AddAlarmTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89D11A6AFC87001F7264 /* AddAlarmTableViewController.m */; };
 		32FE182E1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FE182D1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m */; };
+		32FE18311A6B14D100CB17DA /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE182F1A6B14D100CB17DA /* save.png */; };
+		32FE18321A6B14D100CB17DA /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE18301A6B14D100CB17DA /* cancel.png */; };
 		3F2C827788979D8EA3C51196 /* libPods-SnoozeYouLose.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11C8BB7607FA610EF3F048 /* libPods-SnoozeYouLose.a */; };
 		409629BF38B8FA090A5E631F /* libPods-SnoozeYouLoseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B5FF9462AA89BE5CC19452 /* libPods-SnoozeYouLoseTests.a */; };
 		6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0D71A6ADF3E00E8EA86 /* main.m */; };
@@ -52,6 +54,8 @@
 		32EF89D11A6AFC87001F7264 /* AddAlarmTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmTableViewController.m; sourceTree = "<group>"; };
 		32FE182C1A6B0FC300CB17DA /* SetSnoozeFeeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetSnoozeFeeViewController.h; sourceTree = "<group>"; };
 		32FE182D1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetSnoozeFeeViewController.m; sourceTree = "<group>"; };
+		32FE182F1A6B14D100CB17DA /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
+		32FE18301A6B14D100CB17DA /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		6AE4F0D21A6ADF3E00E8EA86 /* SnoozeYouLose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozeYouLose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE4F0D61A6ADF3E00E8EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE4F0D71A6ADF3E00E8EA86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
 				32FE182C1A6B0FC300CB17DA /* SetSnoozeFeeViewController.h */,
 				32FE182D1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m */,
+				32FE182F1A6B14D100CB17DA /* save.png */,
+				32FE18301A6B14D100CB17DA /* cancel.png */,
 				32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */,
 				32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */,
 				32EF89D01A6AFC87001F7264 /* AddAlarmTableViewController.h */,
@@ -272,6 +278,8 @@
 			files = (
 				6AE4F0E11A6ADF3E00E8EA86 /* Main.storyboard in Resources */,
 				6AE4F0E61A6ADF3E00E8EA86 /* LaunchScreen.xib in Resources */,
+				32FE18311A6B14D100CB17DA /* save.png in Resources */,
+				32FE18321A6B14D100CB17DA /* cancel.png in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
