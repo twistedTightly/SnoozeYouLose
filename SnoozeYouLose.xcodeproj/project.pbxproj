@@ -11,6 +11,7 @@
 		32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C51A6AE6DF001F7264 /* AlarmsTableTableViewController.m */; };
 		32EF89C91A6AE76C001F7264 /* AlarmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C81A6AE76C001F7264 /* AlarmTableViewCell.m */; };
 		32EF89CC1A6AEAD9001F7264 /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89CB1A6AEAD9001F7264 /* Alarm.m */; };
+		32EF89CF1A6AF57B001F7264 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89CE1A6AF57B001F7264 /* AddAlarmViewController.m */; };
 		6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0D71A6ADF3E00E8EA86 /* main.m */; };
 		6AE4F0DB1A6ADF3E00E8EA86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DA1A6ADF3E00E8EA86 /* AppDelegate.m */; };
 		6AE4F0DE1A6ADF3E00E8EA86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DD1A6ADF3E00E8EA86 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 		32EF89C81A6AE76C001F7264 /* AlarmTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewCell.m; sourceTree = "<group>"; };
 		32EF89CA1A6AEAD9001F7264 /* Alarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alarm.h; sourceTree = "<group>"; };
 		32EF89CB1A6AEAD9001F7264 /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
+		32EF89CD1A6AF57B001F7264 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		32EF89CE1A6AF57B001F7264 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		6AE4F0D21A6ADF3E00E8EA86 /* SnoozeYouLose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozeYouLose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE4F0D61A6ADF3E00E8EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE4F0D71A6ADF3E00E8EA86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				32EF89C11A6AE67D001F7264 /* TabBarViewController.h */,
 				32EF89C21A6AE67D001F7264 /* TabBarViewController.m */,
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
+				32EF89CD1A6AF57B001F7264 /* AddAlarmViewController.h */,
+				32EF89CE1A6AF57B001F7264 /* AddAlarmViewController.m */,
 				32EF89CA1A6AEAD9001F7264 /* Alarm.h */,
 				32EF89CB1A6AEAD9001F7264 /* Alarm.m */,
 				32EF89C71A6AE76C001F7264 /* AlarmTableViewCell.h */,
@@ -239,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32EF89CF1A6AF57B001F7264 /* AddAlarmViewController.m in Sources */,
 				32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */,
 				32EF89CC1A6AEAD9001F7264 /* Alarm.m in Sources */,
 				32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */,
