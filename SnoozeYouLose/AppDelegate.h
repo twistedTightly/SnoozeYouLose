@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
