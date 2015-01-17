@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AST-g0-RLK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AST-g0-RLK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Alarms Table Table View Controller-->
@@ -120,13 +121,19 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IGK-VT-ZFH" id="OJI-l7-NIK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GbL-OV-ptq">
-                                                    <rect key="frame" x="0.0" y="6" width="600" height="162"/>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="GbL-OV-ptq">
+                                                    <rect key="frame" x="8" y="6" width="584" height="162"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="443219156.07221198">
                                                         <!--2015-01-17 20:25:56 +0000-->
                                                     </date>
                                                 </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GbL-OV-ptq" firstAttribute="leading" secondItem="OJI-l7-NIK" secondAttribute="leadingMargin" id="5SP-Lz-kTk"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GbL-OV-ptq" secondAttribute="trailing" id="J1J-UU-yto"/>
+                                                <constraint firstItem="GbL-OV-ptq" firstAttribute="top" secondItem="OJI-l7-NIK" secondAttribute="topMargin" id="Z38-Pq-Rtu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GbL-OV-ptq" secondAttribute="bottom" id="kZO-Rj-njD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
