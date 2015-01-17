@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AddAlarmTableViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UIDatePicker *timeDatePicker;
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *optionsTableView;
 @end

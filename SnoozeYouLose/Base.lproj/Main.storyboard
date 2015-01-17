@@ -58,7 +58,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UUR-Aw-uKg">
                             <connections>
                                 <action selector="addButtonPressed:" destination="mHn-n3-fGO" id="jpg-Mj-B1D"/>
-                                <segue destination="g3b-SX-Buo" kind="presentation" id="INu-jD-N08"/>
+                                <segue destination="ElA-iZ-cRV" kind="presentation" id="JYE-EU-1iV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -104,22 +104,7 @@
             </objects>
             <point key="canvasLocation" x="1090" y="417"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="YI3-zb-EQM">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g3b-SX-Buo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dXC-Tx-UtC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="K2t-fj-BjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2573" y="417"/>
-        </scene>
-        <!--Add Alarm Table View Controller-->
+        <!--Add Alarm-->
         <scene sceneID="8e4-Z7-Q2g">
             <objects>
                 <tableViewController id="Pw2-gw-e0T" customClass="AddAlarmTableViewController" sceneMemberID="viewController">
@@ -210,10 +195,36 @@
                             <outlet property="delegate" destination="Pw2-gw-e0T" id="eBp-Aa-bNR"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Alarm" id="2ME-ua-lYL">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="pr4-ka-C0U"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="DhN-8C-bMZ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="optionsTableView" destination="wqD-eB-1fb" id="dAd-yn-rG1"/>
+                        <outlet property="timeDatePicker" destination="GbL-OV-ptq" id="isq-qA-ebE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JJ-HR-LmH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3335" y="418"/>
+            <point key="canvasLocation" x="3297" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kgA-ac-ahR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ElA-iZ-cRV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lol-MF-dG9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pw2-gw-e0T" kind="relationship" relationship="rootViewController" id="3fd-f6-OnL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zkR-uu-fk1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2587" y="417"/>
         </scene>
     </scenes>
 </document>
