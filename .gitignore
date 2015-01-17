@@ -1,0 +1,9 @@
+# CocoaPods #
+#############
+Pods/
+Podfile.lock
+
+# OS Generated Files #
+######################
+.DS_Store
+.DS_Store?
