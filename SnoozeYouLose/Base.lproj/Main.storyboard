@@ -62,10 +62,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Alarms" id="9th-M1-6wg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="gjb-QK-CRp"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UUR-Aw-uKg">
                             <connections>
-                                <action selector="addButtonPressed:" destination="mHn-n3-fGO" id="jpg-Mj-B1D"/>
-                                <segue destination="ElA-iZ-cRV" kind="presentation" id="JYE-EU-1iV"/>
+                                <segue destination="ElA-iZ-cRV" kind="presentation" identifier="addAlarmSegue" id="JYE-EU-1iV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -621,7 +621,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buddyLabel" destination="PIX-yI-4eZ" id="zcl-mE-cb7"/>
-                        <outlet property="optionsTableView" destination="wqD-eB-1fb" id="dAd-yn-rG1"/>
                         <outlet property="repeatLabel" destination="4LH-BT-0j7" id="Xxb-Im-fEc"/>
                         <outlet property="snoozeFeeLabel" destination="6jZ-Ew-wKM" id="3bk-ii-y81"/>
                         <outlet property="timeDatePicker" destination="GbL-OV-ptq" id="isq-qA-ebE"/>

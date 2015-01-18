@@ -49,10 +49,50 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    // Repeat
+    if (self.currentAlarm.repeatDays == (kRepeatDayOfWeekSunday|kRepeatDayOfWeekMonday|kRepeatDayOfWeekTuesday|kRepeatDayOfWeekWednesday|kRepeatDayOfWeekThursday|kRepeatDayOfWeekFriday|kRepeatDayOfWeekSaturday)) {
+        self.repeatLabel.text = @"All";
+    } else if (self.currentAlarm.repeatDays == (kRepeatDayOfWeekMonday|kRepeatDayOfWeekTuesday|kRepeatDayOfWeekWednesday|kRepeatDayOfWeekThursday|kRepeatDayOfWeekFriday)) {
+        self.repeatLabel.text = @"Weekdays";
+    } else if (self.currentAlarm.repeatDays == 0) {
+        self.repeatLabel.text = @"Never";
+    } else {
+        NSMutableString *tempStr = [[NSMutableString alloc] init];
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekSunday) {
+            [tempStr appendString:@"S"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekMonday) {
+            [tempStr appendString:@"M"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekTuesday) {
+            [tempStr appendString:@"T"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekWednesday) {
+            [tempStr appendString:@"W"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekThursday) {
+            [tempStr appendString:@"R"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekFriday) {
+            [tempStr appendString:@"F"];
+        }
+        if (self.currentAlarm.repeatDays & kRepeatDayOfWeekSaturday) {
+            [tempStr appendString:@"S"];
+        }
+        
+        self.repeatLabel.text = [tempStr copy];
+    }
+    
+    // Snooze Fee
+    self.snoozeFeeLabel.text = [NSString stringWithFormat:@"$%@", self.currentAlarm.snoozeCost];
+    
+    // Buddy
+    self.buddyLabel.text = self.currentAlarm.friendDisplayName;
+    
+    [self.tableView reloadData];
 }
 
 -(void)savePressed {
-#warning: Actually save the alarm
     [self.alarmManager addAlarm:self.currentAlarm];
     self.currentAlarm = nil;
     

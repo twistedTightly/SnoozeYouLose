@@ -42,6 +42,10 @@
     [self syncAlarmDaysOfWeekWithView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 -(void)savePressed {
     self.alarm.repeatDays = self.repeatDaysOfWeek;
     [self.navigationController popViewControllerAnimated:YES];

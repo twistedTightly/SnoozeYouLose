@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Venmo-iOS-SDK/Venmo.h>
+#import "AlarmManager.h"
 
 
 @interface AlarmsTableTableViewController : UITableViewController
-@property (strong,nonatomic) NSMutableArray *alarmsArray;
+
+@property (strong, nonatomic) AlarmManager *alarmManager;
+
 @end

@@ -23,7 +23,6 @@
     self.feePickerView.delegate = self;
     self.feePickerView.dataSource = self;
     
-
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [saveButton setBackgroundImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
     saveButton.frame = CGRectMake(0,0,15,15);
@@ -37,14 +36,14 @@
     [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
-    
-
-
-    
 }
 
 -(void)savePressed {
-#warning: Actually save the value
+    NSInteger chosenFeeIdx = [self.feePickerView selectedRowInComponent:0];
+    NSMutableString *chosenFee = [self.pickerData[chosenFeeIdx] mutableCopy];
+    [chosenFee deleteCharactersInRange:NSMakeRange(0, 1)];
+    self.alarm.snoozeCost = [NSNumber numberWithInteger:[chosenFee integerValue]];
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)cancelPressed {

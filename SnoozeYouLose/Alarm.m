@@ -17,7 +17,7 @@
     self.alarmDate = [[NSDate alloc] init];
     self.friendDisplayName = [[NSString alloc] init];
     self.friendUserName = [[NSString alloc] init];
-    self.snoozeCost = [[NSNumber alloc] init];
+    self.snoozeCost = [[NSNumber alloc] initWithInt:1];
     self.isOn = NO;
     self.repeatDays = kRepeatDayOfWeekNotSet;
     return self;

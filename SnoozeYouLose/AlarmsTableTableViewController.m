@@ -7,6 +7,8 @@
 //
 
 #import "AlarmsTableTableViewController.h"
+#import "AlarmTableViewCell.h"
+#import "AddAlarmTableViewController.h"
 
 @interface AlarmsTableTableViewController ()
 
@@ -45,9 +47,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)addButtonPressed:(id)sender {
-    NSLog(@"Add pressed");
-}
 
 #pragma mark - Table view data source
 
@@ -58,18 +57,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self.alarmsArray count];
+    return [self.alarmManager.alarms count];
 }
 
-/*
+// Lazy Instantiation
+- (AlarmManager *)alarmManager {
+    if (!_alarmManager) {
+        _alarmManager = [[AlarmManager alloc] init];
+    }
+    return _alarmManager;
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    AlarmTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"alarmCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    if (!cell) {
+        cell = [[AlarmTableViewCell alloc] init];
+    }
+    
+    Alarm *currentAlarm = self.alarmManager.alarms[indexPath.row];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    dateFormatter.dateStyle = NSDateFormatterNoStyle;
+    cell.timeLabel.text = [dateFormatter stringFromDate:currentAlarm.alarmDate];
+    cell.friendLabel.text = currentAlarm.friendDisplayName;
+    cell.snoozeCostLabel.text = [NSString stringWithFormat:@"$%@", currentAlarm.snoozeCost];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -105,14 +123,19 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"addAlarmSegue"]) {
+        UINavigationController *navController = segue.destinationViewController;
+        AddAlarmTableViewController *addAlarmController = (AddAlarmTableViewController *)navController.topViewController;
+        addAlarmController.alarmManager = self.alarmManager;
+    }
 }
-*/
+
 
 @end
