@@ -13,7 +13,7 @@
 
 @property(strong,nonatomic) NSMutableArray *friendsDisplayNames;
 @property(strong,nonatomic) NSMutableArray *friendsUserIds;
-
+@property (strong,nonatomic) NSMutableArray *friendsPictures;
 @property (strong, nonatomic) Alarm *alarm;
 
 @end

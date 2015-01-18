@@ -38,6 +38,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     self.friendsDisplayNames = [[NSMutableArray alloc] init];
     self.friendsUserIds = [[NSMutableArray alloc] init];
+    self.friendsPictures = [[NSMutableArray alloc ] init];
     [self populateFriendsWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
         if(isSuccessful) {
             
@@ -51,8 +52,10 @@
             for (NSDictionary *userDict in friendsArray) {
                 NSString *friendId = userDict[@"id"];
                 NSString *displayname = userDict[@"display_name"];
+                NSString *image_url = userDict[@"profile_picture_url"];
                 [self.friendsDisplayNames addObject:displayname];
                 [self.friendsUserIds addObject:friendId];
+                [self.friendsPictures addObject:image_url];
                 NSLog(@"Added: %@",displayname);
             }
             
@@ -129,7 +132,14 @@
     
     // Configure the cell...
     cell.textLabel.text = [self.friendsDisplayNames objectAtIndex:indexPath.row];
-    
+    NSURL * imageURL = [NSURL URLWithString:[self.friendsPictures objectAtIndex:indexPath.row]];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+    /*cell.imageView.layer.cornerRadius = cell.imageView.frame.size.height / 2;
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.borderWidth = 0.0f;*/
+    [cell.imageView setImage:image];
+
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
