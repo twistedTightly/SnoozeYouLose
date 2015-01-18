@@ -20,9 +20,9 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:184.0f/255.0f green:184.0f/255.0f blue:184.0f/255.0f alpha:1.0f]}];
 
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:1.0f]];
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:19.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:1.0f]];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UITabBar appearance] setBarTintColor:[UIColor blackColor]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     
     // Local notification
     UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert;

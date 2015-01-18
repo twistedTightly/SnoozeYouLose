@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:55 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUy-YN-pL2">
-                                            <rect key="frame" x="18" y="16" width="126" height="42"/>
+                                            <rect key="frame" x="18" y="16" width="125.5" height="41.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
                                             <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -36,13 +36,13 @@
                                             </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYX-WL-MFy">
-                                            <rect key="frame" x="116" y="66" width="20" height="21"/>
+                                            <rect key="frame" x="115.5" y="61.5" width="19.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.35294117647058826" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maribeth R." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl2-s7-afn">
-                                            <rect key="frame" x="18" y="66" width="90" height="21"/>
+                                            <rect key="frame" x="18" y="61.5" width="89.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.35294117647058826" green="0.35294117647058826" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="0Np-sr-9vC" secondAttribute="centerY" id="8Je-Mk-9V0"/>
                                         <constraint firstItem="WUy-YN-pL2" firstAttribute="leading" secondItem="KRR-Bv-YAq" secondAttribute="leadingMargin" constant="10" id="JmQ-Qd-je4"/>
-                                        <constraint firstItem="jl2-s7-afn" firstAttribute="top" secondItem="WUy-YN-pL2" secondAttribute="bottom" constant="8" symbolic="YES" id="LKi-jv-S8O"/>
+                                        <constraint firstItem="jl2-s7-afn" firstAttribute="top" secondItem="WUy-YN-pL2" secondAttribute="bottom" constant="4" id="LKi-jv-S8O"/>
                                         <constraint firstItem="WUy-YN-pL2" firstAttribute="top" secondItem="KRR-Bv-YAq" secondAttribute="topMargin" constant="8" id="OWA-0O-jNV"/>
                                         <constraint firstItem="FYX-WL-MFy" firstAttribute="baseline" secondItem="jl2-s7-afn" secondAttribute="baseline" id="c97-fY-wiF"/>
                                         <constraint firstItem="0Np-sr-9vC" firstAttribute="trailing" secondItem="KRR-Bv-YAq" secondAttribute="trailingMargin" id="gZ0-Te-Dj9"/>
@@ -184,7 +184,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1355" y="1971"/>
+            <point key="canvasLocation" x="1533" y="1971"/>
         </scene>
         <!--Profile Page View Controller-->
         <scene sceneID="vgC-CM-xce">
@@ -226,9 +226,9 @@
                                 <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-QO-68r">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-QO-68r">
                                 <rect key="frame" x="256" y="345" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -236,14 +236,14 @@
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="OsC-40-22u" secondAttribute="centerX" id="5L2-Il-FPK"/>
-                            <constraint firstItem="P0c-m9-zQj" firstAttribute="top" secondItem="VYf-Zz-4Su" secondAttribute="bottom" constant="8" symbolic="YES" id="9Ou-K3-ruC"/>
+                            <constraint firstItem="P0c-m9-zQj" firstAttribute="top" secondItem="VYf-Zz-4Su" secondAttribute="bottom" constant="30" id="9Ou-K3-ruC"/>
                             <constraint firstAttribute="centerY" secondItem="VYf-Zz-4Su" secondAttribute="centerY" id="CnU-wZ-xUm"/>
                             <constraint firstAttribute="centerX" secondItem="b3Y-QO-68r" secondAttribute="centerX" id="E70-vT-tMa"/>
-                            <constraint firstItem="OsC-40-22u" firstAttribute="top" secondItem="b3Y-QO-68r" secondAttribute="bottom" constant="8" symbolic="YES" id="VYK-YJ-VIE"/>
+                            <constraint firstItem="OsC-40-22u" firstAttribute="top" secondItem="b3Y-QO-68r" secondAttribute="bottom" constant="12" id="VYK-YJ-VIE"/>
                             <constraint firstAttribute="centerX" secondItem="32E-9Y-Nxn" secondAttribute="centerX" id="WNZ-Jd-ghh"/>
                             <constraint firstAttribute="centerX" secondItem="P0c-m9-zQj" secondAttribute="centerX" id="ZEh-D6-Zv0"/>
                             <constraint firstAttribute="centerX" secondItem="VYf-Zz-4Su" secondAttribute="centerX" id="fGK-mE-fyP"/>
-                            <constraint firstItem="b3Y-QO-68r" firstAttribute="top" secondItem="P0c-m9-zQj" secondAttribute="bottom" constant="8" symbolic="YES" id="mx3-JZ-P8r"/>
+                            <constraint firstItem="b3Y-QO-68r" firstAttribute="top" secondItem="P0c-m9-zQj" secondAttribute="bottom" constant="6" id="mx3-JZ-P8r"/>
                             <constraint firstItem="VYf-Zz-4Su" firstAttribute="top" secondItem="32E-9Y-Nxn" secondAttribute="bottom" constant="8" symbolic="YES" id="x6X-La-J9a"/>
                         </constraints>
                     </view>
@@ -319,7 +319,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dollars sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQU-zW-qad">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dollars sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQU-zW-qad">
                                 <rect key="frame" x="256" y="210" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -331,7 +331,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="29" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnL-ql-JwO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnL-ql-JwO">
                                 <rect key="frame" x="267" y="131" width="67" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="0.72156862749999995" green="0.91372549020000005" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -478,6 +478,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendsCell" textLabel="Ukk-Xq-f66" style="IBUITableViewCellStyleDefault" id="Uar-rU-5X3">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -513,6 +514,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="KO0-jw-WMA">
                                 <cells>
@@ -668,6 +670,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14509803921568629" green="0.14509803921568629" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection headerTitle="" id="lLT-bk-dvr">
                                 <cells>
@@ -819,6 +822,6 @@
         <image name="snooze.png" width="292" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sdB-90-xzC"/>
+        <segue reference="AaI-WU-SIV"/>
     </inferredMetricsTieBreakers>
 </document>

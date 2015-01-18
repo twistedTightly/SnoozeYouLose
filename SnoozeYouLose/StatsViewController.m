@@ -20,16 +20,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 -(void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger dollarsSent = [defaults integerForKey:@"dollarsSent"];
     NSInteger snoozesHit = [defaults integerForKey:@"snoozesHit"];
     if(!(dollarsSent && snoozesHit)) {
-        
-        [defaults setInteger:0 forKey:@"dollarsSent"];
-        [defaults setInteger:0 forKey:@"snoozesHit"];
-
+        [defaults setInteger:16 forKey:@"dollarsSent"]; dollarsSent = 16;
+        [defaults setInteger:10 forKey:@"snoozesHit"];  snoozesHit = 10;
     }
+    [defaults synchronize];
 
     [self.dollarsSentLabel setText:[NSString stringWithFormat:@"%ld",(long)dollarsSent]];
     [self.snoozesHitLabel setText:[NSString stringWithFormat:@"%ld",(long)snoozesHit]];
