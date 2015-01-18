@@ -15,23 +15,18 @@
     [self.alarms addObject:alarm];
     [alarm scheduleLocalNotificationWithIndex:[self.alarms indexOfObject:alarm]];
     
-    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"alarmDate" ascending:YES];
-    [self.alarms sortUsingDescriptors:@[sortDesc]];
+    [self storeAlarms];
 }
 
 - (void)deleteAlarmAtIndex:(NSUInteger)index {
     // unset local notification
     [self.alarms[index] unscheduleLocalNotification];
-    [self.alarms removeObjectAtIndex:index];
+    self.alarms[index] = nil;
+    
+    [self storeAlarms];
 }
 
 - (void)storeAlarms {
-    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.alarms] forKey:@"storedAlarms"];
-    if (![defaults synchronize]) {
-        NSLog(@"Problem");
-    };*/
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
@@ -39,9 +34,6 @@
 }
 
 - (void)retrieveStoredAlarms {
-    /*NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSData *retrievedData = [defaults objectForKey:@"storedAlarms"];
-    if ([retrievedData length] > 0) self.alarms = [NSKeyedUnarchiver unarchiveObjectWithData:retrievedData];*/
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
