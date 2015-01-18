@@ -37,8 +37,7 @@
 - (IBAction)alarmSnoozed:(id)sender {
     // Send Venmo payment
     NSLog(@"Pay a friend with username:%@",self.alarmObject.friendUserId);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *displayName = [defaults objectForKey:@"display_name"];
+    NSString *displayName = [Venmo sharedInstance].session.user.displayName;
     NSString *note = nil;
     if(displayName) {
        note = [NSString stringWithFormat:@"%@ hit the snooze button!!", displayName];
@@ -61,7 +60,7 @@
                         }];
     
     
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //update snoozes and dollars sent
     NSInteger dollarsSent = [defaults integerForKey:@"dollarsSent"];
     NSInteger snoozesHit = [defaults integerForKey:@"snoozesHit"];

@@ -72,8 +72,7 @@
 - (void)populateFriendsWithCompletionHandler:(void (^)(NSData *data, BOOL isSuccessful, NSError *error))completionHandler {
     NSLog(@"got here 1");
     // Initial authenticatio
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *userID = [defaults objectForKey:@"userID"];
+    NSString *userID = [Venmo sharedInstance].session.user.externalId;
     NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/%@/friends?access_token=%@", userID,[[Venmo sharedInstance] session].accessToken];
     NSLog(@"hahah: %@",urlReq);
 

@@ -19,12 +19,13 @@
     // Do any additional setup after loading the view.
     
     
-//    [[Venmo sharedInstance] logout];
+   //[[Venmo sharedInstance] logout];
     // Set Venmo payments to use the API by default, as opposed to switching to the app
     [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
 
        
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

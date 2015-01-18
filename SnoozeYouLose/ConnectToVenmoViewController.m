@@ -8,7 +8,6 @@
 
 #import "ConnectToVenmoViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
-
 @interface ConnectToVenmoViewController ()
 
 @end
@@ -63,43 +62,49 @@
     [initialAuthDataTask resume];
 }
 - (IBAction)connectButtonPressed:(id)sender {
-    [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
-                                                 VENPermissionAccessProfile,VENPermissionAccessFriends]
-                         withCompletionHandler:^(BOOL success, NSError *error) {
-                             if (success) {
-                                 // :)
-                                 [self.connectToVenmoButton setUserInteractionEnabled:NO];
-                                 [self.connectToVenmoButton setEnabled:NO];
-                                 [self.connectToVenmoButton setHidden:YES];
-                                 NSLog(@"Now, we take your money");
-                        
-                                 
-                                 [self getUserIDWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
-                                     if(isSuccessful) {
-                                         
-                                         NSError* jsonerror;
-                                         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
-                                                                                              options:kNilOptions
-                                                                                                error:&jsonerror];
-                                         NSString *userID = json[@"data"][@"user"][@"id"];
-                                         NSLog(@"user id is %@", userID);
-                                         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                                         [defaults setObject:userID forKey:@"userID"];
-                                         [defaults synchronize];
-                                         [self dismissViewControllerAnimated:YES completion:nil];
-                                     }
-                                     else {
-                                         NSLog(@"Error with getting user id: %@",error);
-                                     }
+        [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
+                                                     VENPermissionAccessProfile,VENPermissionAccessFriends]
+                             withCompletionHandler:^(BOOL success, NSError *error) {
+                                 if (success) {
                                      
-                                 }];
-                             }
-                             else {
-                                 // :(
-                                 NSLog(@"Unfortunately, this app isn't much use if you don't log in");
-                                 NSLog(@"Error: %@",error);
-                             }
-                         }];
+                                     // :)
+                                     [self.connectToVenmoButton setUserInteractionEnabled:NO];
+                                     [self.connectToVenmoButton setEnabled:NO];
+                                     [self.connectToVenmoButton setHidden:YES];
+                                     NSLog(@"Now, we take your money");
+                                     
+                                     NSLog(@"External: %@",[Venmo sharedInstance].session.user.externalId);
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+
+                                     
+                                    /* [self getUserIDWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
+                                         if(isSuccessful) {
+                                             
+                                             NSError* jsonerror;
+                                             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                  options:kNilOptions
+                                                                                                    error:&jsonerror];
+                                             NSString *userID = json[@"data"][@"user"][@"id"];
+                                             NSLog(@"user id is %@", userID);
+                                             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                                             [defaults setObject:userID forKey:@"userID"];
+                                             [defaults synchronize];
+                                             [self dismissViewControllerAnimated:YES completion:nil];
+                                         }
+                                         else {
+                                             NSLog(@"Error with getting user id: %@",error);
+                                         }
+                                         
+                                     }];*/
+                                 }
+                                 else {
+                                     // :(
+                                     NSLog(@"Unfortunately, this app isn't much use if you don't log in");
+                                     NSLog(@"Error: %@",error);
+                                 }
+                             }];
+    
+   
 }
 
 /*
