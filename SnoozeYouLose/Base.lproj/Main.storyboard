@@ -108,10 +108,16 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="3ao-HE-yTZ" secondAttribute="centerX" id="BhN-ax-fXz"/>
+                            <constraint firstAttribute="centerX" secondItem="3ao-HE-yTZ" secondAttribute="centerX" id="k6f-JO-QWv"/>
                             <constraint firstAttribute="centerX" secondItem="nPf-Bt-mem" secondAttribute="centerX" constant="-0.5" id="nAa-ie-aYH"/>
                             <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="3ao-HE-yTZ" secondAttribute="bottom" constant="160" id="x5l-GJ-N6C"/>
                             <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="3ao-HE-yTZ" secondAttribute="bottom" constant="22" id="ylD-uQ-j2n"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BhN-ax-fXz"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VHZ-5q-xzZ" appends="YES" id="2Sl-Vg-mVO"/>
                         </connections>
