@@ -14,5 +14,9 @@
 @property (strong, nonatomic) NSMutableArray *alarms;
 
 - (void)addAlarm:(Alarm *)alarm;
+- (void)deleteAlarmAtIndex:(NSUInteger)index;
+
+- (void)storeAlarms;
+- (void)retrieveStoredAlarms;
 
 @end

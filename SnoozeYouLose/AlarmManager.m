@@ -11,10 +11,30 @@
 @implementation AlarmManager
 
 - (void)addAlarm:(Alarm *)alarm {
+    // set local notification
     [self.alarms addObject:alarm];
     
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"alarmDate" ascending:YES];
     [self.alarms sortUsingDescriptors:@[sortDesc]];
+}
+
+- (void)deleteAlarmAtIndex:(NSUInteger)index {
+    // unset local notification
+    [self.alarms removeObjectAtIndex:index];
+}
+
+- (void)storeAlarms {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.alarms forKey:@"storedAlarms"];
+    if (![defaults synchronize]) {
+        NSLog(@"Problem");
+    };
+}
+
+- (void)retrieveStoredAlarms {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *retrievedArray = [[defaults objectForKey:@"storedAlarms"] mutableCopy];
+    if (retrievedArray) self.alarms = retrievedArray;
 }
 
 // Lazy instantiation
