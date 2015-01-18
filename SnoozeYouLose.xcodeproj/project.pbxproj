@@ -34,6 +34,8 @@
 		3F2C827788979D8EA3C51196 /* libPods-SnoozeYouLose.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11C8BB7607FA610EF3F048 /* libPods-SnoozeYouLose.a */; };
 		409629BF38B8FA090A5E631F /* libPods-SnoozeYouLoseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B5FF9462AA89BE5CC19452 /* libPods-SnoozeYouLoseTests.a */; };
 		658DB5431A6B5511006E2B89 /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 658DB5421A6B5511006E2B89 /* AlarmManager.m */; };
+		65EF6B541A6C07A8008B3E8B /* ring.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65EF6B531A6C07A8008B3E8B /* ring.wav */; };
+		65EF6B561A6C07AD008B3E8B /* registersound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 65EF6B551A6C07AD008B3E8B /* registersound.wav */; };
 		6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386101A6B748F008DD98B /* snoozeyoulose.png */; };
 		6A63861A1A6B8211008DD98B /* LaunchScreen_whole.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */; };
 		6A63861D1A6B8466008DD98B /* AlarmResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */; };
@@ -98,6 +100,8 @@
 		32FE18441A6B408300CB17DA /* ConnectToVenmoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectToVenmoViewController.m; sourceTree = "<group>"; };
 		658DB5411A6B5511006E2B89 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
 		658DB5421A6B5511006E2B89 /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmManager.m; sourceTree = "<group>"; };
+		65EF6B531A6C07A8008B3E8B /* ring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ring.wav; sourceTree = "<group>"; };
+		65EF6B551A6C07AD008B3E8B /* registersound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = registersound.wav; sourceTree = "<group>"; };
 		6A6386101A6B748F008DD98B /* snoozeyoulose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snoozeyoulose.png; sourceTree = "<group>"; };
 		6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_whole.xib; sourceTree = "<group>"; };
 		6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmResponseViewController.h; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				32FE182D1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m */,
 				32FE182F1A6B14D100CB17DA /* save.png */,
 				32FE18301A6B14D100CB17DA /* cancel.png */,
+				65EF6B531A6C07A8008B3E8B /* ring.wav */,
+				65EF6B551A6C07AD008B3E8B /* registersound.wav */,
 				32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */,
 				32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */,
 				32EF89D01A6AFC87001F7264 /* AddAlarmTableViewController.h */,
@@ -351,6 +357,7 @@
 				32FE183A1A6B34E800CB17DA /* inactive-profile.png in Resources */,
 				32FE183E1A6B34E800CB17DA /* active-clock.png in Resources */,
 				32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */,
+				65EF6B541A6C07A8008B3E8B /* ring.wav in Resources */,
 				32FE18311A6B14D100CB17DA /* save.png in Resources */,
 				6A6386211A6B8CDD008DD98B /* load-screen-02-02.png in Resources */,
 				32FE18391A6B34E800CB17DA /* active-profile.png in Resources */,
@@ -363,6 +370,7 @@
 				328F70691A6BB7C30008B69F /* disconnect.png in Resources */,
 				6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */,
 				32FE183B1A6B34E800CB17DA /* active-chart.png in Resources */,
+				65EF6B561A6C07AD008B3E8B /* registersound.wav in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
 				32FE183D1A6B34E800CB17DA /* inactive-clock.png in Resources */,
 			);
