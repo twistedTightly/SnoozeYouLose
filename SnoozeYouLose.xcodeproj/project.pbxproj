@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		19776D65C84C3DDD164D8C52 /* Pods-SnoozeYouLose.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnoozeYouLose.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnoozeYouLose/Pods-SnoozeYouLose.debug.xcconfig"; sourceTree = "<group>"; };
 		2D11C8BB7607FA610EF3F048 /* libPods-SnoozeYouLose.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SnoozeYouLose.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		328F705E1A6B69DC0008B69F /* venmo-secret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "venmo-secret.h"; sourceTree = "<group>"; };
 		32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatDayOfWeekTableViewController.h; sourceTree = "<group>"; };
 		32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatDayOfWeekTableViewController.m; sourceTree = "<group>"; };
 		32EF89C11A6AE67D001F7264 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -155,7 +156,7 @@
 			children = (
 				6AE4F0D91A6ADF3E00E8EA86 /* AppDelegate.h */,
 				6AE4F0DA1A6ADF3E00E8EA86 /* AppDelegate.m */,
-				658DB5441A6B5B88006E2B89 /* venmo-secret.h */,
+				328F705E1A6B69DC0008B69F /* venmo-secret.h */,
 				32EF89C11A6AE67D001F7264 /* TabBarViewController.h */,
 				32EF89C21A6AE67D001F7264 /* TabBarViewController.m */,
 				32FE18431A6B408300CB17DA /* ConnectToVenmoViewController.h */,

@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
 
 @interface SetSnoozeFeeViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UIPickerView *feePickerView;
 @property (strong,nonatomic) NSArray *pickerData;
+
+@property (strong, nonatomic) Alarm *alarm;
+
 @end
