@@ -26,14 +26,14 @@
 
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [saveButton setBackgroundImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
-    saveButton.frame = CGRectMake(0,0,25,25);
+    saveButton.frame = CGRectMake(0,0,15,15);
     [saveButton addTarget:self action:@selector(savePressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
     [self.navigationItem setRightBarButtonItem:saveBarButton];
     
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
-    cancelButton.frame = CGRectMake(0,0,25,25);
+    cancelButton.frame = CGRectMake(0,0,15,15);
     [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
