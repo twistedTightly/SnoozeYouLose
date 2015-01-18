@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -41,6 +40,7 @@
         [self performSegueWithIdentifier:@"connectToVenmoSegue" sender:self];
     }
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     if (self.alarmManager.alarms.count == 0) {
