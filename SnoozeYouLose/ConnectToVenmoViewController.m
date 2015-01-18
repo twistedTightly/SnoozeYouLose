@@ -33,10 +33,11 @@
     
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     
+    NSString *urlString = [NSString stringWithFormat:@"https://api.venmo.com/v1/me?access_token=%@", [[Venmo sharedInstance] session].accessToken];
+    NSLog(@"hahah: %@",urlString);
     // Initial authentication
     NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:
-                                               [NSURL URLWithString:
-                                                [NSString stringWithFormat:@"https://api.venmo.com/v1/me?access_token=%@", [[Venmo sharedInstance] session].accessToken]]
+                                               [NSURL URLWithString:urlString]
                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                   timeoutInterval:60.0];
     
@@ -63,7 +64,7 @@
 }
 - (IBAction)connectButtonPressed:(id)sender {
     [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
-                                                 VENPermissionAccessProfile]
+                                                 VENPermissionAccessProfile,VENPermissionAccessFriends]
                          withCompletionHandler:^(BOOL success, NSError *error) {
                              if (success) {
                                  // :)

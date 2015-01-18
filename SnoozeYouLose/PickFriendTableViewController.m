@@ -54,7 +54,10 @@
                 [self.friendsUserNames addObject:username];
                 NSLog(@"Added: %@",displayname);
             }
-            [self.tableView reloadData];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
             
             
         }
@@ -71,6 +74,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *userID = [defaults objectForKey:@"userID"];
     NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/%@/friends?access_token=%@", userID,[[Venmo sharedInstance] session].accessToken];
+    NSLog(@"hahah: %@",urlReq);
+
     NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlReq]
                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                   timeoutInterval:60.0];
