@@ -10,6 +10,7 @@
 #import "Alarm.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "SnoozeConfirmationViewController.h"
+#import "HurrayConfirmationViewController.h"
 @interface AlarmResponseViewController : UIViewController
 
 @property (nonatomic) NSUInteger indexOfAlarmInAlarmManager;

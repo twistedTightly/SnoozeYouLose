@@ -45,6 +45,16 @@
     
     self.alarmManager = [[AlarmManager alloc] init];
     self.alarmObject = nil;
+    
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(slideToRightWithGestureRecognizer:)];
+    swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:swipeRight];
+    
+
+}
+-(void)slideToRightWithGestureRecognizer:(id)sender {
+    [self performSegueWithIdentifier:@"goToHurray" sender:self];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,11 +130,19 @@
 
     }
     [defaults synchronize];
+    [self performSegueWithIdentifier:@"goToSnoozeConfirmation" sender:self];
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    SnoozeConfirmationViewController *vc = (SnoozeConfirmationViewController *)segue.destinationViewController;
-    [vc setDisplayName:self.alarmObject.friendDisplayName];
-    [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
+    if([segue.identifier isEqualToString:@"goToSnoozeConfirmation"]) {
+        SnoozeConfirmationViewController *vc = (SnoozeConfirmationViewController *)segue.destinationViewController;
+        [vc setDisplayName:self.alarmObject.friendDisplayName];
+        [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
+    }
+    else if ([segue.destinationViewController isEqualToString:@"goToHurray"]) {
+        HurrayConfirmationViewController *vc = (HurrayConfirmationViewController *)segue.destinationViewController;
+        [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
+    }
+
 }
 
 /*
