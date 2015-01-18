@@ -12,6 +12,7 @@
 @interface AlarmResponseViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *alarmFee;
+@property (weak, nonatomic) IBOutlet UILabel *friendName;
 
 @property (strong, nonatomic) AVAudioPlayer *alarmPlayer;
 @property (strong, nonatomic) AVAudioPlayer *registerPlayer;
@@ -23,10 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    //TODO: change this if this isn't what the label is supposed to be?
-    [self.alarmFee setText:[NSString stringWithFormat:@"$%@",self.alarmObject.snoozeCost]];
-    
     
     NSString *alarmSoundPath = [[NSBundle mainBundle] pathForResource:@"ring" ofType:@"wav"];
     NSURL *alarmSoundURL = [NSURL fileURLWithPath:alarmSoundPath];
@@ -44,6 +41,10 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    //TODO: change this if this isn't what the label is supposed to be?
+    [self.alarmFee setText:[NSString stringWithFormat:@"$%@",self.alarmObject.snoozeCost]];
+    self.friendName.text = [NSString stringWithFormat:@"To %@", self.alarmObject.friendDisplayName];
     
     [self.alarmPlayer play];
 }
@@ -108,8 +109,6 @@
 
     }
     [defaults synchronize];
-    [self performSegueWithIdentifier:@"goToSnoozeConfirmation" sender:self];
-    
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SnoozeConfirmationViewController *vc = (SnoozeConfirmationViewController *)segue.destinationViewController;

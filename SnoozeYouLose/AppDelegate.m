@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AlarmResponseViewController.h"
+#import "AlarmManager.h"
 
 @interface AppDelegate ()
 
@@ -41,6 +42,8 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     AlarmResponseViewController *vc = (AlarmResponseViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AlarmResponse"];
+//    vc.friendDisplayName = notification.userInfo[@"friendDisplayName"];
+//    vc.snoozeCost = notification.userInfo[@"snoozeCost"];
     
     //set the root controller to it
     self.window.rootViewController = vc;

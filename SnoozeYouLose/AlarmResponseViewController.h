@@ -11,5 +11,7 @@
 #import <Venmo-iOS-SDK/Venmo.h>
 #import "SnoozeConfirmationViewController.h"
 @interface AlarmResponseViewController : UIViewController
-@property (strong,nonatomic) Alarm *alarmObject;
+
+@property (strong, nonatomic) Alarm *alarmObject;
+
 @end
