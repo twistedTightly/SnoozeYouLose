@@ -45,6 +45,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    
     [self.alarmPlayer play];
 }
 
@@ -108,7 +109,6 @@
 
     }
     [defaults synchronize];
-    
 }
 
 /*

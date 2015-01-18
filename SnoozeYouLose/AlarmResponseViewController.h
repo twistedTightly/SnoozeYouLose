@@ -10,5 +10,9 @@
 #import "Alarm.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 @interface AlarmResponseViewController : UIViewController
-@property (strong,nonatomic) Alarm *alarmObject;
+
+@property (strong, nonatomic) Alarm *alarmObject;
+@property (strong, nonatomic) NSString *friendDisplayName;
+@property (strong, nonatomic) NSNumber *snoozeCost;
+
 @end
