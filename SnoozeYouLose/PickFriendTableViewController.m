@@ -37,7 +37,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated {
     self.friendsDisplayNames = [[NSMutableArray alloc] init];
-    self.friendsUserNames = [[NSMutableArray alloc] init];
+    self.friendsUserIds = [[NSMutableArray alloc] init];
     [self populateFriendsWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
         if(isSuccessful) {
             
@@ -49,10 +49,10 @@
             NSArray *friendsArray = json[@"data"];
             NSLog(@"friends is %@",friendsArray);
             for (NSDictionary *userDict in friendsArray) {
-                NSString *username = userDict[@"username"];
+                NSString *friendId = userDict[@"id"];
                 NSString *displayname = userDict[@"display_name"];
                 [self.friendsDisplayNames addObject:displayname];
-                [self.friendsUserNames addObject:username];
+                [self.friendsUserIds addObject:friendId];
                 NSLog(@"Added: %@",displayname);
             }
             
@@ -135,7 +135,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.alarm.friendDisplayName = self.friendsDisplayNames[indexPath.row];
-    self.alarm.friendUserName = self.friendsUserNames[indexPath.row];
+    self.alarm.friendUserId = self.friendsUserIds[indexPath.row];
     
     [self.navigationController popViewControllerAnimated:YES];
 }

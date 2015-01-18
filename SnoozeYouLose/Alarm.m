@@ -16,7 +16,7 @@
     
     self.alarmDate = [[NSDate alloc] init];
     self.friendDisplayName = [[NSString alloc] init];
-    self.friendUserName = [[NSString alloc] init];
+    self.friendUserId = [[NSString alloc] init];
     self.snoozeCost = [[NSNumber alloc] initWithInt:1];
     self.isOn = NO;
     self.repeatDays = kRepeatDayOfWeekNotSet;
@@ -44,7 +44,7 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.alarmDate forKey:@"alarmDate"];
     [aCoder encodeObject:self.friendDisplayName forKey:@"friendDisplayName"];
-    [aCoder encodeObject:self.friendUserName forKey:@"friendUserName"];
+    [aCoder encodeObject:self.friendUserId forKey:@"friendUserId"];
     [aCoder encodeObject:self.snoozeCost forKey:@"snoozeCost"];
     [aCoder encodeObject:[NSNumber numberWithBool:self.isOn] forKey:@"isOn"];
     [aCoder encodeObject:[NSNumber numberWithInteger:self.repeatDays] forKey:@"repeatDays"];
@@ -54,7 +54,7 @@
     if (self = [super init]) {
         self.alarmDate = [aDecoder decodeObjectForKey:@"alarmDate"];
         self.friendDisplayName = [aDecoder decodeObjectForKey:@"friendDisplayName"];
-        self.friendUserName = [aDecoder decodeObjectForKey:@"friendUserName"];
+        self.friendUserId = [aDecoder decodeObjectForKey:@"friendUserId"];
         self.snoozeCost = [aDecoder decodeObjectForKey:@"snoozeCost"];
         self.isOn = [[aDecoder decodeObjectForKey:@"isOn"] boolValue];
         self.repeatDays = [[aDecoder decodeObjectForKey:@"repeatDays"] integerValue];

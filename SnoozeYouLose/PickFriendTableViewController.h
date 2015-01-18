@@ -12,7 +12,7 @@
 @interface PickFriendTableViewController : UITableViewController
 
 @property(strong,nonatomic) NSMutableArray *friendsDisplayNames;
-@property(strong,nonatomic) NSMutableArray *friendsUserNames;
+@property(strong,nonatomic) NSMutableArray *friendsUserIds;
 
 @property (strong, nonatomic) Alarm *alarm;
 
