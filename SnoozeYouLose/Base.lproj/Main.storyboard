@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AST-g0-RLK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -88,28 +89,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDG-uB-dvN">
-                                <rect key="frame" x="265" y="144" width="70" height="95"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDG-uB-dvN">
+                                <rect key="frame" x="267" y="144" width="67" height="71"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" red="0.72156862749999995" green="0.91372549020000005" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJF-Fh-1Ds">
+                                <rect key="frame" x="193" y="455" width="214" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xJF-Fh-1Ds" secondAttribute="height" multiplier="214:45" id="JQS-Dc-T74"/>
+                                    <constraint firstAttribute="width" constant="214" id="W46-uU-atR"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="snooze.png"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Maribeth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJO-jY-fxU">
+                                <rect key="frame" x="248" y="235" width="104" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lJO-jY-fxU" secondAttribute="height" multiplier="13:3" id="i9K-JM-pAv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to turn off alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-Bt-mem">
-                                <rect key="frame" x="213" y="512" width="175" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="232" y="511" width="137" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJF-Fh-1Ds">
-                                <rect key="frame" x="184" y="455" width="233" height="49"/>
-                                <state key="normal" backgroundImage="snooze.png"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="lJO-jY-fxU" secondAttribute="centerX" id="1fH-5s-CXt"/>
+                            <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="nPf-Bt-mem" secondAttribute="bottom" constant="8" symbolic="YES" id="4tU-5Z-GQj"/>
                             <constraint firstAttribute="centerX" secondItem="xJF-Fh-1Ds" secondAttribute="centerX" id="8GS-xu-fg3"/>
                             <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="xJF-Fh-1Ds" secondAttribute="bottom" constant="146" id="Ay0-m0-1jl"/>
+                            <constraint firstItem="xJF-Fh-1Ds" firstAttribute="top" secondItem="lJO-jY-fxU" secondAttribute="bottom" constant="196" id="Crs-b1-cDi"/>
+                            <constraint firstItem="lJO-jY-fxU" firstAttribute="top" secondItem="xDG-uB-dvN" secondAttribute="bottom" constant="8" id="GB2-MF-hcf"/>
                             <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="nPf-Bt-mem" secondAttribute="bottom" constant="67" id="HFQ-26-5cn"/>
                             <constraint firstAttribute="centerX" secondItem="xDG-uB-dvN" secondAttribute="centerX" id="LUr-4Y-OU3"/>
                             <constraint firstItem="xJF-Fh-1Ds" firstAttribute="top" secondItem="xDG-uB-dvN" secondAttribute="bottom" constant="166" id="Nl2-kj-DUQ"/>
@@ -119,29 +137,42 @@
                             <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="xJF-Fh-1Ds" secondAttribute="bottom" constant="8" id="Z8X-cK-5EH"/>
                             <constraint firstItem="xJF-Fh-1Ds" firstAttribute="top" secondItem="xDG-uB-dvN" secondAttribute="bottom" constant="216" id="ZZC-hv-1VG"/>
                             <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="xJF-Fh-1Ds" secondAttribute="bottom" constant="8" id="bda-8v-Pf0"/>
+                            <constraint firstItem="lJO-jY-fxU" firstAttribute="top" secondItem="xDG-uB-dvN" secondAttribute="bottom" constant="20" id="dII-Ju-TZl"/>
                             <constraint firstAttribute="centerX" secondItem="xJF-Fh-1Ds" secondAttribute="centerX" id="gpZ-aC-PRU"/>
                             <constraint firstAttribute="centerX" secondItem="nPf-Bt-mem" secondAttribute="centerX" id="nAa-ie-aYH"/>
+                            <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="xJF-Fh-1Ds" secondAttribute="bottom" constant="17" id="oPM-Am-xZi"/>
                             <constraint firstAttribute="centerX" secondItem="nPf-Bt-mem" secondAttribute="centerX" id="qgV-3z-tGl"/>
+                            <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="xJF-Fh-1Ds" secondAttribute="bottom" constant="11" id="qhA-Yr-DcZ"/>
                             <constraint firstAttribute="centerX" secondItem="xJF-Fh-1Ds" secondAttribute="centerX" id="rbx-3J-yMr"/>
                             <constraint firstItem="xDG-uB-dvN" firstAttribute="top" secondItem="QPY-gk-cl5" secondAttribute="bottom" constant="124" id="sv7-ct-RLZ"/>
+                            <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="nPf-Bt-mem" secondAttribute="bottom" constant="73" id="xSf-qu-oWP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="LUr-4Y-OU3"/>
                                 <exclude reference="sv7-ct-RLZ"/>
+                                <exclude reference="GB2-MF-hcf"/>
                                 <exclude reference="8GS-xu-fg3"/>
                                 <exclude reference="Nl2-kj-DUQ"/>
                                 <exclude reference="SFb-lf-cuf"/>
+                                <exclude reference="ZZC-hv-1VG"/>
                                 <exclude reference="rbx-3J-yMr"/>
                                 <exclude reference="Z8X-cK-5EH"/>
+                                <exclude reference="bda-8v-Pf0"/>
                                 <exclude reference="nAa-ie-aYH"/>
+                                <exclude reference="oPM-Am-xZi"/>
+                                <exclude reference="4tU-5Z-GQj"/>
                                 <exclude reference="Ay0-m0-1jl"/>
+                                <exclude reference="HFQ-26-5cn"/>
                             </mask>
                         </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VHZ-5q-xzZ" appends="YES" id="2Sl-Vg-mVO"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="alarmFee" destination="xDG-uB-dvN" id="Iq6-du-wuB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sn3-Qa-mkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="VHZ-5q-xzZ">

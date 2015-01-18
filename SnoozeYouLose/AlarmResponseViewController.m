@@ -9,6 +9,7 @@
 #import "AlarmResponseViewController.h"
 
 @interface AlarmResponseViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *alarmFee;
 
 @end
 
