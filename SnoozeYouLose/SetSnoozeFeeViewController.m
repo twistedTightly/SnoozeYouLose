@@ -22,12 +22,38 @@
     self.pickerData = @[@"$1",@"$2",@"$3",@"$4",@"$5"];
     self.feePickerView.delegate = self;
     self.feePickerView.dataSource = self;
-}
+    
 
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [saveButton setBackgroundImage:[UIImage imageNamed:@"save.png"] forState:UIControlStateNormal];
+    saveButton.frame = CGRectMake(0,0,15,15);
+    [saveButton addTarget:self action:@selector(savePressed) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithCustomView:saveButton];
+    [self.navigationItem setRightBarButtonItem:saveBarButton];
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    cancelButton.frame = CGRectMake(0,0,15,15);
+    [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
+    
+
+
+    
+}
+-(void)savePressed {
+#warning: Actually save the value
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)cancelPressed {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 // The number of columns of data
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView

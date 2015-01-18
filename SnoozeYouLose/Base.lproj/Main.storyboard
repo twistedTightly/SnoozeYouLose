@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Alarms Table Table View Controller-->
+        <!--Alarms-->
         <scene sceneID="fiY-Mb-HY9">
             <objects>
                 <tableViewController id="mHn-n3-fGO" customClass="AlarmsTableTableViewController" sceneMemberID="viewController">
@@ -13,6 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="102" id="vAn-wE-W9u" customClass="AlarmTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -22,7 +23,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:55 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUy-YN-pL2">
                                             <rect key="frame" x="8" y="15" width="147" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Np-sr-9vC">
@@ -31,17 +32,18 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maribeth R." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl2-s7-afn">
                                             <rect key="frame" x="8" y="67" width="147" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYX-WL-MFy">
                                             <rect key="frame" x="184" y="66" width="20" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="friendLabel" destination="jl2-s7-afn" id="ZG2-6G-O2U"/>
                                     <outlet property="onOffSwitch" destination="0Np-sr-9vC" id="ftH-WG-T96"/>
@@ -55,7 +57,7 @@
                             <outlet property="delegate" destination="mHn-n3-fGO" id="P9i-27-2HR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9th-M1-6wg">
+                    <navigationItem key="navigationItem" title="Alarms" id="9th-M1-6wg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UUR-Aw-uKg">
                             <connections>
                                 <action selector="addButtonPressed:" destination="mHn-n3-fGO" id="jpg-Mj-B1D"/>
@@ -63,10 +65,80 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7h7-ds-3kG" kind="presentation" identifier="connectToVenmoSegue" animates="NO" id="sdB-90-xzC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6p-bB-gLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="417"/>
+            <point key="canvasLocation" x="1901" y="745"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vgC-CM-xce">
+            <objects>
+                <viewController id="f0M-9s-IuJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ski-cQ-kQl"/>
+                        <viewControllerLayoutGuide type="bottom" id="1f3-6t-hGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uqz-wr-eBv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-profile.png" selectedImage="active-profile.png" id="NSP-zM-k4E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lj-WF-uh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1814"/>
+        </scene>
+        <!--Connect To Venmo View Controller-->
+        <scene sceneID="Qhd-gZ-Btm">
+            <objects>
+                <viewController id="7h7-ds-3kG" customClass="ConnectToVenmoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Qg-2S-Bre"/>
+                        <viewControllerLayoutGuide type="bottom" id="4h2-MC-dDe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kG6-wQ-Mpx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-ks-0gu">
+                                <rect key="frame" x="155" y="270" width="290" height="60"/>
+                                <state key="normal" backgroundImage="connect-to-venmo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectButtonPressed:" destination="7h7-ds-3kG" eventType="touchUpInside" id="SVd-hx-aNI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tU9-Zl-u58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="2069"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UkW-oT-vQo">
+            <objects>
+                <viewController id="8wB-Vg-5R7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6T-mt-8P8"/>
+                        <viewControllerLayoutGuide type="bottom" id="S6g-b8-Rlq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Isg-XL-cGm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-chart.png" selectedImage="active-chart.png" id="IdJ-kD-G1l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRg-qp-aOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1132"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="RMJ-vM-KBF">
@@ -80,17 +152,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="TLr-3z-XtN" kind="relationship" relationship="viewControllers" id="8j8-Vi-Apg"/>
+                        <segue destination="8wB-Vg-5R7" kind="relationship" relationship="viewControllers" id="otS-I8-42e"/>
+                        <segue destination="f0M-9s-IuJ" kind="relationship" relationship="viewControllers" id="Ogm-lo-7Nk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZ5-lQ-iuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="405"/>
+            <point key="canvasLocation" x="-12" y="1251"/>
         </scene>
-        <!--Alarms-->
+        <!--Navigation Controller-->
         <scene sceneID="N8J-rT-vbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLr-3z-XtN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarms" id="ucG-qU-RtJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-clock.png" selectedImage="active-clock.png" id="ucG-qU-RtJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRG-YS-LvI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -117,11 +191,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRA-b9-9ug">
-                                <rect key="frame" x="0.0" y="64" width="600" height="162"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRA-b9-9ug">
+                                <rect key="frame" x="16" y="64" width="568" height="162"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GRA-b9-9ug" firstAttribute="leading" secondItem="YbI-rK-UaK" secondAttribute="leadingMargin" id="3D2-bC-qeS"/>
+                            <constraint firstItem="3zM-nx-U89" firstAttribute="top" secondItem="GRA-b9-9ug" secondAttribute="bottom" constant="330" id="EmR-dT-27e"/>
+                            <constraint firstItem="GRA-b9-9ug" firstAttribute="leading" secondItem="YbI-rK-UaK" secondAttribute="leadingMargin" id="f3G-55-1SV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GRA-b9-9ug" secondAttribute="trailing" id="puo-gq-M8U"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -144,7 +224,7 @@
                         <sections>
                             <tableViewSection id="KO0-jw-WMA">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="dsg-xI-s3P" style="IBUITableViewCellStyleDefault" id="sPR-JM-SHv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="dsg-xI-s3P" style="IBUITableViewCellStyleDefault" id="sPR-JM-SHv">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sPR-JM-SHv" id="Njv-tq-RRb">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -159,7 +239,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yEv-MY-Tqe" style="IBUITableViewCellStyleDefault" id="EN2-ex-o77">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="yEv-MY-Tqe" style="IBUITableViewCellStyleDefault" id="EN2-ex-o77">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EN2-ex-o77" id="mdC-z9-Jsi">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -174,7 +254,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="MR5-4b-GLh" style="IBUITableViewCellStyleDefault" id="u7w-41-pRQ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="MR5-4b-GLh" style="IBUITableViewCellStyleDefault" id="u7w-41-pRQ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u7w-41-pRQ" id="rTq-2u-S1Q">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -189,7 +269,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qKq-WM-wQ6" style="IBUITableViewCellStyleDefault" id="WUK-om-cS8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qKq-WM-wQ6" style="IBUITableViewCellStyleDefault" id="WUK-om-cS8">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WUK-om-cS8" id="Yvn-B9-uqT">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -204,7 +284,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7QE-4X-0pG" style="IBUITableViewCellStyleDefault" id="VYm-fD-7uf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="7QE-4X-0pG" style="IBUITableViewCellStyleDefault" id="VYm-fD-7uf">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VYm-fD-7uf" id="JGE-EO-eWr">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -219,7 +299,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="rzL-s9-HWn" style="IBUITableViewCellStyleDefault" id="fKv-wx-H5X">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="rzL-s9-HWn" style="IBUITableViewCellStyleDefault" id="fKv-wx-H5X">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fKv-wx-H5X" id="5tU-CP-axJ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -234,7 +314,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="fJU-Kq-rmQ" style="IBUITableViewCellStyleDefault" id="bfm-4Z-cmc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="fJU-Kq-rmQ" style="IBUITableViewCellStyleDefault" id="bfm-4Z-cmc">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bfm-4Z-cmc" id="NFm-HW-0Qz">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -331,7 +411,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="$0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6jZ-Ew-wKM">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="$1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6jZ-Ew-wKM">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -397,4 +477,13 @@
             <point key="canvasLocation" x="2587" y="417"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="active-chart.png" width="30" height="25"/>
+        <image name="active-clock.png" width="25" height="25"/>
+        <image name="active-profile.png" width="23" height="22"/>
+        <image name="connect-to-venmo.png" width="292" height="62"/>
+        <image name="inactive-chart.png" width="30" height="25"/>
+        <image name="inactive-clock.png" width="25" height="25"/>
+        <image name="inactive-profile.png" width="23" height="22"/>
+    </resources>
 </document>

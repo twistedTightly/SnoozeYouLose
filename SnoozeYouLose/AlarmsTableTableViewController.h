@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Venmo-iOS-SDK/Venmo.h>
+
 
 @interface AlarmsTableTableViewController : UITableViewController
 @property (strong,nonatomic) NSMutableArray *alarmsArray;
