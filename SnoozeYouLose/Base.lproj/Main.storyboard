@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="1936" y="1770"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Page View Controller-->
         <scene sceneID="vgC-CM-xce">
             <objects>
-                <viewController id="f0M-9s-IuJ" sceneMemberID="viewController">
+                <viewController id="f0M-9s-IuJ" customClass="ProfilePageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ski-cQ-kQl"/>
                         <viewControllerLayoutGuide type="bottom" id="1f3-6t-hGY"/>
@@ -194,13 +194,51 @@
                     <view key="view" contentMode="scaleToFill" id="Uqz-wr-eBv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="display name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYf-Zz-4Su">
+                                <rect key="frame" x="188" y="202" width="240" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32E-9Y-Nxn">
+                                <rect key="frame" x="188" y="66" width="240" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-40-22u">
+                                <rect key="frame" x="181" y="395" width="229" height="54"/>
+                                <state key="normal" backgroundImage="disconnect.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnectButtonPressed:" destination="f0M-9s-IuJ" eventType="touchUpInside" id="lqn-UI-1W1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="connected to venmo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0c-m9-zQj">
+                                <rect key="frame" x="188" y="266" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3Y-QO-68r">
+                                <rect key="frame" x="188" y="284" width="240" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="active-profile.png" id="NSP-zM-k4E"/>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="VYf-Zz-4Su" id="Hwn-P8-DhU"/>
+                        <outlet property="profileImageView" destination="32E-9Y-Nxn" id="pE7-d4-i5F"/>
+                        <outlet property="userNameLabel" destination="b3Y-QO-68r" id="TeE-ck-wa2"/>
+                        <segue destination="7h7-ds-3kG" kind="presentation" id="AaI-WU-SIV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lj-WF-uh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1814"/>
+            <point key="canvasLocation" x="1233" y="1848"/>
         </scene>
         <!--Connect To Venmo View Controller-->
         <scene sceneID="Qhd-gZ-Btm">
@@ -654,6 +692,10 @@
         <image name="active-clock.png" width="25" height="25"/>
         <image name="active-profile.png" width="23" height="22"/>
         <image name="connect-to-venmo.png" width="292" height="62"/>
+        <image name="disconnect.png" width="184" height="43"/>
         <image name="snooze.png" width="292" height="62"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="AaI-WU-SIV"/>
+    </inferredMetricsTieBreakers>
 </document>

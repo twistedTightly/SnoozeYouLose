@@ -78,7 +78,7 @@
 -(IBAction)disconnectButtonPressed:(id)sender {
     [[Venmo sharedInstance] logout];
     //TODO: segue to connect
-    [self performSegueWithIdentifier:@"" sender:self];
+    [self performSegueWithIdentifier:@"goToConnectFromDisconnect" sender:self];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

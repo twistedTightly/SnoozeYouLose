@@ -10,6 +10,7 @@
 		328F70611A6B857E0008B69F /* PickFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70601A6B857E0008B69F /* PickFriendTableViewController.m */; };
 		328F70641A6BA8D00008B69F /* ProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70631A6BA8D00008B69F /* ProfilePageViewController.m */; };
 		328F70671A6BAC6C0008B69F /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70661A6BAC6C0008B69F /* StatsViewController.m */; };
+		328F70691A6BB7C30008B69F /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F70681A6BB7C30008B69F /* disconnect.png */; };
 		32B0FA771A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */; };
 		32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C21A6AE67D001F7264 /* TabBarViewController.m */; };
 		32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C51A6AE6DF001F7264 /* AlarmsTableTableViewController.m */; };
@@ -62,6 +63,7 @@
 		328F70631A6BA8D00008B69F /* ProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePageViewController.m; sourceTree = "<group>"; };
 		328F70651A6BAC6C0008B69F /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
 		328F70661A6BAC6C0008B69F /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
+		328F70681A6BB7C30008B69F /* disconnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disconnect.png; sourceTree = "<group>"; };
 		32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatDayOfWeekTableViewController.h; sourceTree = "<group>"; };
 		32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatDayOfWeekTableViewController.m; sourceTree = "<group>"; };
 		32EF89C11A6AE67D001F7264 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				328F70651A6BAC6C0008B69F /* StatsViewController.h */,
 				328F70661A6BAC6C0008B69F /* StatsViewController.m */,
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
+				328F70681A6BB7C30008B69F /* disconnect.png */,
 				6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */,
 				6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */,
 				32FE18411A6B3C6900CB17DA /* connect-to-venmo.png */,
@@ -344,6 +347,7 @@
 				32FE18421A6B3C6900CB17DA /* connect-to-venmo.png in Resources */,
 				32FE18321A6B14D100CB17DA /* cancel.png in Resources */,
 				6A6386231A6B8EA8008DD98B /* snooze.png in Resources */,
+				328F70691A6BB7C30008B69F /* disconnect.png in Resources */,
 				6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */,
 				32FE183B1A6B34E800CB17DA /* active-chart.png in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
