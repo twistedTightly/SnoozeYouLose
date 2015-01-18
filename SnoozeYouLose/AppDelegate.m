@@ -17,7 +17,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [Venmo startWithAppId:@"2267" secret:@"nice_try" name:@"SnoozeYouLose"];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:19.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:1.0f]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:19.0f/255.0f green:19.0f/255.0f blue:19.0f/255.0f alpha:1.0f]];
+    
+#include "venmo-secret.h"
     return YES;
 }
 

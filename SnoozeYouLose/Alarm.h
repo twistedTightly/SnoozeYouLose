@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Alarm : NSObject
-@property (strong,nonatomic) NSDate *alarmDate;
-@property (strong,nonatomic) NSString *friendName;
-@property (strong,nonatomic) NSNumber *snoozeCost;
+@interface Alarm : NSObject <NSCoding>
+
+@property (strong, nonatomic) NSDate *alarmDate;
+@property (strong, nonatomic) NSString *friendName;
+@property (strong, nonatomic) NSNumber *snoozeCost;
 @property (nonatomic) BOOL isOn;
-@property (strong,nonatomic) NSMutableArray *repeatDays;
+@property (strong, nonatomic) NSMutableArray *repeatDays;
+
 @end
