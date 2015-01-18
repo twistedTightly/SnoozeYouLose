@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Venmo-iOS-SDK/Venmo.h>
 @interface ProfilePageViewController : UIViewController
-@property (strong,nonatomic) UILabel *userNameLabel;
-@property (strong,nonatomic) UILabel *displayNameLabel;
-@property (strong,nonatomic) UIImageView *profileImageView;
+@property (strong,nonatomic) IBOutlet UILabel *userNameLabel;
+@property (strong,nonatomic) IBOutlet UILabel *displayNameLabel;
+@property (strong,nonatomic) IBOutlet UIImageView *profileImageView;
 @end
