@@ -16,13 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.friendsDisplayNames = [[NSMutableArray alloc] init];
-    self.friendsUserNames = [[NSMutableArray alloc] init];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    cancelButton.frame = CGRectMake(0,0,15,15);
+    [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
+    
+}
+-(void)cancelPressed {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)viewWillAppear:(BOOL)animated {
+    self.friendsDisplayNames = [[NSMutableArray alloc] init];
+    self.friendsUserNames = [[NSMutableArray alloc] init];
     [self populateFriendsWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
         if(isSuccessful) {
             
@@ -30,7 +43,9 @@
             NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
                                                                  options:kNilOptions
                                                                    error:&jsonerror];
+            NSLog(@"json is %@",json);
             NSArray *friendsArray = json[@"data"];
+            NSLog(@"friends is %@",friendsArray);
             for (NSDictionary *userDict in friendsArray) {
                 NSString *username = userDict[@"username"];
                 NSString *displayname = userDict[@"display_name"];
@@ -38,21 +53,23 @@
                 [self.friendsUserNames addObject:username];
                 NSLog(@"Added: %@",displayname);
             }
+            [self.tableView reloadData];
             
-           
+            
         }
         else {
             NSLog(@"Error with getting friends: %@",error);
         }
         
     }];
+
 }
 - (void)populateFriendsWithCompletionHandler:(void (^)(NSData *data, BOOL isSuccessful, NSError *error))completionHandler {
-    
+    NSLog(@"got here 1");
     // Initial authenticatio
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSNumber *userID = [defaults objectForKey:@"userID"];
-    NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/:%@/friends?access_token=8JeYmc2CjWPyjWYRZXEL8KEFGV5yaDhA",userID];
+    NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/%@/friends?access_token=8JeYmc2CjWPyjWYRZXEL8KEFGV5yaDhA",userID];
     NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlReq]
                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                   timeoutInterval:60.0];
@@ -63,6 +80,7 @@
     
     // Kick off initial authentication
     NSURLSessionDataTask *initialAuthDataTask = [session dataTaskWithRequest:initialAuthRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSLog(@"got here 2");
         BOOL isGood = NO;
         if (error) {
             NSLog(@"Error when authenticating: %@", error);
@@ -72,6 +90,7 @@
             isGood = YES;
             
         }
+        NSLog(@"exiting comp handler");
         
         completionHandler(data, isGood,error);
     }];
@@ -103,11 +122,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"friendsCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = [self.friendsDisplayNames objectAtIndex:indexPath.row];
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 /*
 // Override to support conditional editing of the table view.
