@@ -7,9 +7,14 @@
 //
 
 #import "AlarmResponseViewController.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AlarmResponseViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *alarmFee;
+
+@property (strong, nonatomic) AVAudioPlayer *alarmPlayer;
+@property (strong, nonatomic) AVAudioPlayer *registerPlayer;
 
 @end
 
@@ -21,6 +26,26 @@
     
     //TODO: change this if this isn't what the label is supposed to be?
     [self.alarmFee setText:[NSString stringWithFormat:@"$%@",self.alarmObject.snoozeCost]];
+    
+    
+    NSString *alarmSoundPath = [[NSBundle mainBundle] pathForResource:@"ring" ofType:@"wav"];
+    NSURL *alarmSoundURL = [NSURL fileURLWithPath:alarmSoundPath];
+    NSError *alarmSoundLoadErr;
+    self.alarmPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:alarmSoundURL error:&alarmSoundLoadErr];
+    self.alarmPlayer.numberOfLoops = -1;
+    
+    if (!alarmSoundLoadErr) [self.alarmPlayer prepareToPlay];
+    
+    NSString *registerSoundPath = [[NSBundle mainBundle] pathForResource:@"registersound" ofType:@"wav"];
+    NSURL *registerSoundURL = [NSURL fileURLWithPath:registerSoundPath];
+    NSError *registerSoundLoadErr;
+    self.registerPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:registerSoundURL error:&registerSoundLoadErr];
+    [self.registerPlayer prepareToPlay];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [self.alarmPlayer play];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +61,11 @@
 
 - (IBAction)alarmSnoozed:(id)sender {
     // Send Venmo payment
+    [self.alarmPlayer pause];
+    [self.alarmPlayer playAtTime:[self.alarmPlayer deviceCurrentTime] + 60];
+    
+    [self.registerPlayer play];
+    
     NSLog(@"Pay a friend with username:%@",self.alarmObject.friendUserId);
     NSString *displayName = [Venmo sharedInstance].session.user.displayName;
     NSString *note = nil;
