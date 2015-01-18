@@ -20,19 +20,15 @@
     [self.snoozeFeeLabel setText:[NSString stringWithFormat:@"$%@",self.snoozeFee]];
     [self.displayNameLabel setText:[NSString stringWithFormat:@"to %@!",self.displayName]];
     
-    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
-    cancelButton.frame = CGRectMake(0,0,15,15);
-    [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
-    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(exitScreen:)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)cancelPressed {
+-(void)exitScreen:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
