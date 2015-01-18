@@ -110,6 +110,11 @@
     }
     [defaults synchronize];
 }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SnoozeConfirmationViewController *vc = (SnoozeConfirmationViewController *)segue.destinationViewController;
+    [vc setDisplayName:self.alarmObject.friendDisplayName];
+    [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
+}
 
 /*
 #pragma mark - Navigation
