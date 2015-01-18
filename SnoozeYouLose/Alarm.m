@@ -9,7 +9,7 @@
 #import "Alarm.h"
 
 @implementation Alarm
--(id)init {
+- (id)init {
     if(!self) {
         self = [super init];
     }
@@ -22,8 +22,12 @@
     return self;
     
 }
--(id)initWithAlarmDate:(NSDate *)alarmDate andFriendName:(NSString *)friendName andSnoozeCost:(NSNumber *)snoozeCost andIsOn:(BOOL)isOn andRepeatDays:(NSMutableArray *)repeatDays {
-    if(!self) {
+- (id)initWithAlarmDate:(NSDate *)alarmDate
+          andFriendName:(NSString *)friendName
+          andSnoozeCost:(NSNumber *)snoozeCost
+                andIsOn:(BOOL)isOn
+          andRepeatDays:(NSMutableArray *)repeatDays {
+    if (!self) {
         self = [super init];
     }
     self.alarmDate = alarmDate;
@@ -32,6 +36,27 @@
     self.isOn = isOn;
     self.repeatDays = repeatDays;
     return self;
-    
 }
+
+#pragma mark - Serialization
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.alarmDate forKey:@"alarmDate"];
+    [aCoder encodeObject:self.friendName forKey:@"friendName"];
+    [aCoder encodeObject:self.snoozeCost forKey:@"snoozeCost"];
+    [aCoder encodeObject:[NSNumber numberWithBool:self.isOn] forKey:@"isOn"];
+    [aCoder encodeObject:self.repeatDays forKey:@"repeatDays"];
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.alarmDate = [aDecoder decodeObjectForKey:@"alarmDate"];
+        self.friendName = [aDecoder decodeObjectForKey:@"friendName"];
+        self.snoozeCost = [aDecoder decodeObjectForKey:@"snoozeCost"];
+        self.isOn = [[aDecoder decodeObjectForKey:@"isOn"] boolValue];
+        self.repeatDays = [aDecoder decodeObjectForKey:@"repeatDays"];
+    }
+    
+    return self;
+}
+
 @end
