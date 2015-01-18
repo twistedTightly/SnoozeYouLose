@@ -18,11 +18,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.snoozeFeeLabel setText:[NSString stringWithFormat:@"$%@",self.snoozeFee]];
+    
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelButton setBackgroundImage:[UIImage imageNamed:@"cancel.png"] forState:UIControlStateNormal];
+    cancelButton.frame = CGRectMake(0,0,15,15);
+    [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+    [self.navigationItem setLeftBarButtonItem:cancelBarButton];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)cancelPressed {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
