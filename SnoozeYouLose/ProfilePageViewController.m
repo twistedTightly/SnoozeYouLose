@@ -26,10 +26,9 @@
 }
 -(void)viewWillAppear:(BOOL)animated {
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *username = [defaults objectForKey:@"username"];
-    NSString *displayName = [defaults objectForKey:@"display_name"];
-    NSString *profile_image_url = [defaults objectForKey:@"profile_image_url"];
+    NSString *username = [Venmo sharedInstance].session.user.username;
+    NSString *displayName = [Venmo sharedInstance].session.user.displayName;
+    NSString *profile_image_url = [Venmo sharedInstance].session.user.profileImageUrl;
     if(username && displayName && profile_image_url) {
         //set username label here
         [self.userNameLabel setText:[NSString stringWithFormat:@"@%@", username]];
@@ -44,6 +43,7 @@
         
     }
     else {
+        /*
         [self getProfileInfoWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
             if(isSuccessful) {
                 
@@ -77,7 +77,7 @@
                 NSLog(@"Error with getting profile info: %@",error);
             }
             
-        }];
+        }];*/
         
     }
     
@@ -85,8 +85,9 @@
 }
 -(IBAction)disconnectButtonPressed:(id)sender {
     [[Venmo sharedInstance] logout];
-    //TODO: segue to connect
-    [self performSegueWithIdentifier:@"goToConnectFromDisconnect" sender:self];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];    //TODO: segue to connect
+    [self performSegueWithIdentifier:@"disconnectVenmo" sender:self];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

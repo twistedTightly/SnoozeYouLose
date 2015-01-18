@@ -25,7 +25,8 @@
 
 - (void)storeAlarms {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.alarms forKey:@"storedAlarms"];
+    
+    [defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:self.alarms] forKey:@"storedAlarms"];
     if (![defaults synchronize]) {
         NSLog(@"Problem");
     };
@@ -33,8 +34,8 @@
 
 - (void)retrieveStoredAlarms {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *retrievedArray = [[defaults objectForKey:@"storedAlarms"] mutableCopy];
-    if (retrievedArray) self.alarms = retrievedArray;
+    NSData *retrievedData = [defaults objectForKey:@"storedAlarms"];
+    if ([retrievedData length] > 0) self.alarms = [NSKeyedUnarchiver unarchiveObjectWithData:retrievedData];
 }
 
 // Lazy instantiation
