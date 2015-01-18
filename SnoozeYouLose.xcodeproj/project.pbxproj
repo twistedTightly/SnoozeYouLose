@@ -13,6 +13,7 @@
 		328F70691A6BB7C30008B69F /* disconnect.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F70681A6BB7C30008B69F /* disconnect.png */; };
 		328F706C1A6C09900008B69F /* snooze-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F706A1A6C09900008B69F /* snooze-icon.png */; };
 		328F706D1A6C09900008B69F /* dollar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F706B1A6C09900008B69F /* dollar-icon.png */; };
+		328F70701A6C0CE10008B69F /* SnoozeConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F706F1A6C0CE10008B69F /* SnoozeConfirmationViewController.m */; };
 		32B0FA771A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */; };
 		32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C21A6AE67D001F7264 /* TabBarViewController.m */; };
 		32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C51A6AE6DF001F7264 /* AlarmsTableTableViewController.m */; };
@@ -70,6 +71,8 @@
 		328F70681A6BB7C30008B69F /* disconnect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disconnect.png; sourceTree = "<group>"; };
 		328F706A1A6C09900008B69F /* snooze-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "snooze-icon.png"; sourceTree = "<group>"; };
 		328F706B1A6C09900008B69F /* dollar-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollar-icon.png"; sourceTree = "<group>"; };
+		328F706E1A6C0CE10008B69F /* SnoozeConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnoozeConfirmationViewController.h; sourceTree = "<group>"; };
+		328F706F1A6C0CE10008B69F /* SnoozeConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnoozeConfirmationViewController.m; sourceTree = "<group>"; };
 		32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatDayOfWeekTableViewController.h; sourceTree = "<group>"; };
 		32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatDayOfWeekTableViewController.m; sourceTree = "<group>"; };
 		32EF89C11A6AE67D001F7264 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				328F70651A6BAC6C0008B69F /* StatsViewController.h */,
 				328F70661A6BAC6C0008B69F /* StatsViewController.m */,
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
+				328F706E1A6C0CE10008B69F /* SnoozeConfirmationViewController.h */,
+				328F706F1A6C0CE10008B69F /* SnoozeConfirmationViewController.m */,
 				328F70681A6BB7C30008B69F /* disconnect.png */,
 				6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */,
 				6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */,
@@ -463,6 +468,7 @@
 				32EF89C91A6AE76C001F7264 /* AlarmTableViewCell.m in Sources */,
 				658DB5431A6B5511006E2B89 /* AlarmManager.m in Sources */,
 				6A63861D1A6B8466008DD98B /* AlarmResponseViewController.m in Sources */,
+				328F70701A6C0CE10008B69F /* SnoozeConfirmationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
