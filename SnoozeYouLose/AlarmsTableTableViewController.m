@@ -24,6 +24,17 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    if([[Venmo sharedInstance] isSessionValid]) {
+        NSLog(@"Session already valid");
+        
+        
+    }
+    else {
+        NSLog(@"Going to connect");
+        [self performSegueWithIdentifier:@"connectToVenmoSegue" sender:self];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -22,6 +22,8 @@
 		32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE18361A6B34E800CB17DA /* inactive-chart.png */; };
 		32FE183D1A6B34E800CB17DA /* inactive-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE18371A6B34E800CB17DA /* inactive-clock.png */; };
 		32FE183E1A6B34E800CB17DA /* active-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE18381A6B34E800CB17DA /* active-clock.png */; };
+		32FE18421A6B3C6900CB17DA /* connect-to-venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 32FE18411A6B3C6900CB17DA /* connect-to-venmo.png */; };
+		32FE18451A6B408300CB17DA /* ConnectToVenmoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FE18441A6B408300CB17DA /* ConnectToVenmoViewController.m */; };
 		3F2C827788979D8EA3C51196 /* libPods-SnoozeYouLose.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11C8BB7607FA610EF3F048 /* libPods-SnoozeYouLose.a */; };
 		409629BF38B8FA090A5E631F /* libPods-SnoozeYouLoseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B5FF9462AA89BE5CC19452 /* libPods-SnoozeYouLoseTests.a */; };
 		6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0D71A6ADF3E00E8EA86 /* main.m */; };
@@ -67,6 +69,9 @@
 		32FE18361A6B34E800CB17DA /* inactive-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive-chart.png"; sourceTree = "<group>"; };
 		32FE18371A6B34E800CB17DA /* inactive-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inactive-clock.png"; sourceTree = "<group>"; };
 		32FE18381A6B34E800CB17DA /* active-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "active-clock.png"; sourceTree = "<group>"; };
+		32FE18411A6B3C6900CB17DA /* connect-to-venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect-to-venmo.png"; sourceTree = "<group>"; };
+		32FE18431A6B408300CB17DA /* ConnectToVenmoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectToVenmoViewController.h; sourceTree = "<group>"; };
+		32FE18441A6B408300CB17DA /* ConnectToVenmoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectToVenmoViewController.m; sourceTree = "<group>"; };
 		6AE4F0D21A6ADF3E00E8EA86 /* SnoozeYouLose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozeYouLose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE4F0D61A6ADF3E00E8EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE4F0D71A6ADF3E00E8EA86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,7 +147,10 @@
 				6AE4F0DA1A6ADF3E00E8EA86 /* AppDelegate.m */,
 				32EF89C11A6AE67D001F7264 /* TabBarViewController.h */,
 				32EF89C21A6AE67D001F7264 /* TabBarViewController.m */,
+				32FE18431A6B408300CB17DA /* ConnectToVenmoViewController.h */,
+				32FE18441A6B408300CB17DA /* ConnectToVenmoViewController.m */,
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
+				32FE18411A6B3C6900CB17DA /* connect-to-venmo.png */,
 				32FE18331A6B34E800CB17DA /* active-profile.png */,
 				32FE18341A6B34E800CB17DA /* inactive-profile.png */,
 				32FE18351A6B34E800CB17DA /* active-chart.png */,
@@ -296,6 +304,7 @@
 				32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */,
 				32FE18311A6B14D100CB17DA /* save.png in Resources */,
 				32FE18391A6B34E800CB17DA /* active-profile.png in Resources */,
+				32FE18421A6B3C6900CB17DA /* connect-to-venmo.png in Resources */,
 				32FE18321A6B14D100CB17DA /* cancel.png in Resources */,
 				32FE183B1A6B34E800CB17DA /* active-chart.png in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
@@ -388,6 +397,7 @@
 				6AE4F0DB1A6ADF3E00E8EA86 /* AppDelegate.m in Sources */,
 				32EF89D21A6AFC87001F7264 /* AddAlarmTableViewController.m in Sources */,
 				6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */,
+				32FE18451A6B408300CB17DA /* ConnectToVenmoViewController.m in Sources */,
 				32EF89C91A6AE76C001F7264 /* AlarmTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

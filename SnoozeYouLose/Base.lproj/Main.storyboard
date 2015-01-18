@@ -13,6 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="102" id="vAn-wE-W9u" customClass="AlarmTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -22,7 +23,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:55 pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUy-YN-pL2">
                                             <rect key="frame" x="8" y="15" width="147" height="41"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Np-sr-9vC">
@@ -31,17 +32,18 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maribeth R." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl2-s7-afn">
                                             <rect key="frame" x="8" y="67" width="147" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYX-WL-MFy">
                                             <rect key="frame" x="184" y="66" width="20" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="friendLabel" destination="jl2-s7-afn" id="ZG2-6G-O2U"/>
                                     <outlet property="onOffSwitch" destination="0Np-sr-9vC" id="ftH-WG-T96"/>
@@ -63,10 +65,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7h7-ds-3kG" kind="presentation" identifier="connectToVenmoSegue" animates="NO" id="sdB-90-xzC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F6p-bB-gLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="417"/>
+            <point key="canvasLocation" x="1901" y="745"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vgC-CM-xce">
@@ -79,13 +84,42 @@
                     <view key="view" contentMode="scaleToFill" id="Uqz-wr-eBv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="inactive-profile.png" selectedImage="active-profile.png" id="NSP-zM-k4E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lj-WF-uh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="924" y="1814"/>
+        </scene>
+        <!--Connect To Venmo View Controller-->
+        <scene sceneID="Qhd-gZ-Btm">
+            <objects>
+                <viewController id="7h7-ds-3kG" customClass="ConnectToVenmoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Qg-2S-Bre"/>
+                        <viewControllerLayoutGuide type="bottom" id="4h2-MC-dDe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kG6-wQ-Mpx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-ks-0gu">
+                                <rect key="frame" x="155" y="270" width="290" height="60"/>
+                                <state key="normal" backgroundImage="connect-to-venmo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="connectButtonPressed:" destination="7h7-ds-3kG" eventType="touchUpInside" id="SVd-hx-aNI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tU9-Zl-u58" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="2069"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UkW-oT-vQo">
@@ -98,7 +132,7 @@
                     <view key="view" contentMode="scaleToFill" id="Isg-XL-cGm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="inactive-chart.png" selectedImage="active-chart.png" id="IdJ-kD-G1l"/>
                 </viewController>
@@ -447,6 +481,7 @@
         <image name="active-chart.png" width="30" height="25"/>
         <image name="active-clock.png" width="25" height="25"/>
         <image name="active-profile.png" width="23" height="22"/>
+        <image name="connect-to-venmo.png" width="292" height="62"/>
         <image name="inactive-chart.png" width="30" height="25"/>
         <image name="inactive-clock.png" width="25" height="25"/>
         <image name="inactive-profile.png" width="23" height="22"/>
