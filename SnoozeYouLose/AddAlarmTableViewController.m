@@ -7,8 +7,12 @@
 //
 
 #import "AddAlarmTableViewController.h"
+#import "SetSnoozeFeeViewController.h"
+#import "RepeatDayOfWeekTableViewController.h"
 
 @interface AddAlarmTableViewController ()
+
+@property (strong, nonatomic) Alarm *currentAlarm;
 
 @end
 
@@ -38,23 +42,18 @@
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
     
-
-  
-
-    
-    
-    
-   
-    
-    
     
 }
 
 -(void)savePressed {
 #warning: Actually save the alarm
+    [self.alarmManager addAlarm:self.currentAlarm];
+    self.currentAlarm = nil;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)cancelPressed {
+    self.currentAlarm = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
@@ -62,11 +61,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+#warning Add identifiers to segues in storyboard
+    if ([segue.identifier isEqualToString:@"setSnoozeFeeSegue"]) {
+        ((SetSnoozeFeeViewController *)segue.destinationViewController).alarm = self.currentAlarm;
+    } else if ([segue.identifier isEqualToString:@"repeatDayOfWeekSegue"]) {
+        ((RepeatDayOfWeekTableViewController *)segue.destinationViewController).alarm = self.currentAlarm;
+    }
+}
+
+// Lazy instantiation
+- (Alarm *)currentAlarm {
+    if (!_currentAlarm) {
+        _currentAlarm = [[Alarm alloc] init];
+    }
+    return _currentAlarm;
+}
+
 
 
 #pragma mark - Table view data source
-
-
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
