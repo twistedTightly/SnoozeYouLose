@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.snoozeFeeLabel setText:[NSString stringWithFormat:@"$%@",self.snoozeFee]];
+    [self.displayNameLabel setText:[NSString stringWithFormat:@"to %@!",self.displayName]];
 }
 
 - (void)didReceiveMemoryWarning {
