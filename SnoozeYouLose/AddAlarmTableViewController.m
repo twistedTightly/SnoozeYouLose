@@ -105,6 +105,7 @@
     
     NSDate *pickedAlarmDate = [self.timeDatePicker date];
     self.currentAlarm.alarmDate = pickedAlarmDate;
+    self.currentAlarm.isOn = YES;
     
     [self.alarmManager addAlarm:self.currentAlarm];
     self.currentAlarm = nil;
