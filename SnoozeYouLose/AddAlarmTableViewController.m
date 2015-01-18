@@ -45,6 +45,14 @@
     [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
+    
+    [self.timeDatePicker setValue:[UIColor whiteColor] forKeyPath:@"textColor"];
+    SEL selector = NSSelectorFromString(@"setHighlightsToday:");
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[UIDatePicker instanceMethodSignatureForSelector:selector]];
+    BOOL no = NO;
+    [invocation setSelector:selector];
+    [invocation setArgument:&no atIndex:2];
+    [invocation invokeWithTarget:self.timeDatePicker];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

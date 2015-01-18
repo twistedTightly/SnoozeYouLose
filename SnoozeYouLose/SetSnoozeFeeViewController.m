@@ -68,10 +68,13 @@
 }
 
 // The data to return for the row and component (column) that's being passed in
-- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-{
-    return _pickerData[row];
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *title = self.pickerData[row];
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    return attString;
+    
 }
+
 
 /*
 #pragma mark - Navigation
