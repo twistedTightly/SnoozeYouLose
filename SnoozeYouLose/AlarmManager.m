@@ -24,17 +24,27 @@
 }
 
 - (void)storeAlarms {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:self.alarms forKey:@"storedAlarms"];
-    if (![defaults synchronize]) {
-        NSLog(@"Problem");
-    };
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setObject:self.alarms forKey:@"storedAlarms"];
+//    if (![defaults synchronize]) {
+//        NSLog(@"Problem");
+//    };
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
+    [NSKeyedArchiver archiveRootObject:self.alarms toFile:alarmsFile];
 }
 
 - (void)retrieveStoredAlarms {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *retrievedArray = [[defaults objectForKey:@"storedAlarms"] mutableCopy];
-    if (retrievedArray) self.alarms = retrievedArray;
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    NSMutableArray *retrievedArray = [[defaults objectForKey:@"storedAlarms"] mutableCopy];
+//    if (retrievedArray) self.alarms = retrievedArray;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
+    self.alarms = [NSKeyedUnarchiver unarchiveObjectWithFile:alarmsFile];
 }
 
 // Lazy instantiation
