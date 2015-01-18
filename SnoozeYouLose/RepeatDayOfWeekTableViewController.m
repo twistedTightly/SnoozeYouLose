@@ -10,6 +10,8 @@
 
 @interface RepeatDayOfWeekTableViewController ()
 
+@property (nonatomic) NSUInteger repeatDaysOfWeek;
+
 @end
 
 @implementation RepeatDayOfWeekTableViewController
@@ -35,12 +37,13 @@
     [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
-   
-
+    
+    self.repeatDaysOfWeek = self.alarm.repeatDays;
+    [self syncAlarmDaysOfWeekWithView];
 }
 
 -(void)savePressed {
-#warning: Actually save the value
+    self.alarm.repeatDays = self.repeatDaysOfWeek;
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)cancelPressed {
@@ -53,71 +56,71 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-
+    switch (indexPath.row) {
+        case 0:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekSunday;
+            break;
+        case 1:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekMonday;
+            break;
+        case 2:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekTuesday;
+            break;
+        case 3:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekWednesday;
+            break;
+        case 4:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekThursday;
+            break;
+        case 5:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekFriday;
+            break;
+        case 6:
+            self.repeatDaysOfWeek ^= kRepeatDayOfWeekSaturday;
+            break;
+        default:
+            break;
     }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    
+    [self syncAlarmDaysOfWeekWithView];
+}
 
+- (void)syncAlarmDaysOfWeekWithView {
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekSunday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekMonday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekTuesday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekWednesday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekThursday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekFriday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
+    }
+    if (self.repeatDaysOfWeek & kRepeatDayOfWeekSaturday) {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]].accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]].accessoryType = UITableViewCellAccessoryNone;
     }
 }
-#pragma mark - Table view data source
-
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
