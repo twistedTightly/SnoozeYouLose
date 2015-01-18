@@ -42,8 +42,8 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     AlarmResponseViewController *vc = (AlarmResponseViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AlarmResponse"];
-//    vc.friendDisplayName = notification.userInfo[@"friendDisplayName"];
-//    vc.snoozeCost = notification.userInfo[@"snoozeCost"];
+    
+    vc.indexOfAlarmInAlarmManager = [notification.userInfo[@"alarmManagerIndex"] integerValue];
     
     //set the root controller to it
     self.window.rootViewController = vc;

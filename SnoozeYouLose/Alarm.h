@@ -28,7 +28,7 @@ typedef NS_OPTIONS(NSUInteger, RepeatDayOfWeekT) {
 @property (nonatomic) BOOL isOn;
 @property (nonatomic) NSUInteger repeatDays;
 
-- (void)scheduleLocalNotification;
+- (void)scheduleLocalNotificationWithIndex:(NSUInteger)index;
 - (void)unscheduleLocalNotification;
 
 @end

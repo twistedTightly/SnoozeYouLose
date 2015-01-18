@@ -33,7 +33,7 @@
 }
 
 #pragma mark - Local notification
-- (void)scheduleLocalNotification {
+- (void)scheduleLocalNotificationWithIndex:(NSUInteger)index {
     
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
     localNotif.fireDate = self.alarmDate;
@@ -42,8 +42,7 @@
     localNotif.alertBody = [NSString stringWithFormat:@"Alarm %@ ($%@)", self.friendDisplayName, self.snoozeCost];
     localNotif.soundName = UILocalNotificationDefaultSoundName;
     localNotif.userInfo = @{
-                            @"friendDisplayName" : self.friendDisplayName,
-                            @"snoozeCost" : self.snoozeCost
+                            @"alarmManagerIndex" : [NSNumber numberWithInteger:index]
                             };
     
     self.notification = localNotif;

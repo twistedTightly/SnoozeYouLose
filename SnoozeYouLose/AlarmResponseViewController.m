@@ -8,6 +8,7 @@
 
 #import "AlarmResponseViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "AlarmManager.h"
 
 @interface AlarmResponseViewController ()
 
@@ -16,6 +17,9 @@
 
 @property (strong, nonatomic) AVAudioPlayer *alarmPlayer;
 @property (strong, nonatomic) AVAudioPlayer *registerPlayer;
+
+@property (strong, nonatomic) AlarmManager *alarmManager;
+@property (strong, nonatomic) Alarm *alarmObject;
 
 @end
 
@@ -38,9 +42,15 @@
     NSError *registerSoundLoadErr;
     self.registerPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:registerSoundURL error:&registerSoundLoadErr];
     [self.registerPlayer prepareToPlay];
+    
+    self.alarmManager = [[AlarmManager alloc] init];
+    self.alarmObject = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [self.alarmManager retrieveStoredAlarms];
+    self.alarmObject = self.alarmManager.alarms[self.indexOfAlarmInAlarmManager];
     
     //TODO: change this if this isn't what the label is supposed to be?
     [self.alarmFee setText:[NSString stringWithFormat:@"$%@",self.alarmObject.snoozeCost]];
@@ -58,6 +68,7 @@
     // Alarm turned off
     NSLog(@"Alarm turned off");
     self.alarmObject.isOn = NO;
+    [self.alarmManager storeAlarms];
 }
 
 - (IBAction)alarmSnoozed:(id)sender {

@@ -12,8 +12,8 @@
 
 - (void)addAlarm:(Alarm *)alarm {
     // set local notification
-    [alarm scheduleLocalNotification];
     [self.alarms addObject:alarm];
+    [alarm scheduleLocalNotificationWithIndex:[self.alarms indexOfObject:alarm]];
     
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"alarmDate" ascending:YES];
     [self.alarms sortUsingDescriptors:@[sortDesc]];
