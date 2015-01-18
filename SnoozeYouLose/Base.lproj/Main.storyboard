@@ -68,6 +68,44 @@
             </objects>
             <point key="canvasLocation" x="1902" y="417"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="vgC-CM-xce">
+            <objects>
+                <viewController id="f0M-9s-IuJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ski-cQ-kQl"/>
+                        <viewControllerLayoutGuide type="bottom" id="1f3-6t-hGY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uqz-wr-eBv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-profile.png" selectedImage="active-profile.png" id="NSP-zM-k4E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lj-WF-uh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1814"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="UkW-oT-vQo">
+            <objects>
+                <viewController id="8wB-Vg-5R7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R6T-mt-8P8"/>
+                        <viewControllerLayoutGuide type="bottom" id="S6g-b8-Rlq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Isg-XL-cGm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-chart.png" selectedImage="active-chart.png" id="IdJ-kD-G1l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRg-qp-aOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1132"/>
+        </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="RMJ-vM-KBF">
             <objects>
@@ -80,17 +118,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="TLr-3z-XtN" kind="relationship" relationship="viewControllers" id="8j8-Vi-Apg"/>
+                        <segue destination="8wB-Vg-5R7" kind="relationship" relationship="viewControllers" id="otS-I8-42e"/>
+                        <segue destination="f0M-9s-IuJ" kind="relationship" relationship="viewControllers" id="Ogm-lo-7Nk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZ5-lQ-iuj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="303" y="405"/>
+            <point key="canvasLocation" x="-12" y="1251"/>
         </scene>
-        <!--Alarms-->
+        <!--Navigation Controller-->
         <scene sceneID="N8J-rT-vbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLr-3z-XtN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Alarms" id="ucG-qU-RtJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="inactive-clock.png" selectedImage="active-clock.png" id="ucG-qU-RtJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRG-YS-LvI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -403,4 +443,12 @@
             <point key="canvasLocation" x="2587" y="417"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="active-chart.png" width="30" height="25"/>
+        <image name="active-clock.png" width="25" height="25"/>
+        <image name="active-profile.png" width="23" height="22"/>
+        <image name="inactive-chart.png" width="30" height="25"/>
+        <image name="inactive-clock.png" width="25" height="25"/>
+        <image name="inactive-profile.png" width="23" height="22"/>
+    </resources>
 </document>

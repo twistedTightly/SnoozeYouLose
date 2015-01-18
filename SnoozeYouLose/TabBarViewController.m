@@ -22,20 +22,30 @@
     // Set Venmo payments to use the API by default, as opposed to switching to the app
     [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
     
-    // Request permission from the user for the app to access their Venmo account
-    // This will prompt log in by switching to the Venmo app, if installed, or Safari if not
-    [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
-                                                 VENPermissionAccessProfile]
-                         withCompletionHandler:^(BOOL success, NSError *error) {
-                             if (success) {
-                                 // :)
-                                 NSLog(@"Now, we take your money");
-                             }
-                             else {
-                                 // :(
-                                 NSLog(@"Unfortunately, this app isn't much use if you don't log in");
-                             }
-                         }];
+    
+    if([[Venmo sharedInstance] isSessionValid]) {
+        NSLog(@"Session already valid");
+        
+    }
+    else {
+        // Request permission from the user for the app to access their Venmo account
+        // This will prompt log in by switching to the Venmo app, if installed, or Safari if not
+        [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
+                                                     VENPermissionAccessProfile]
+                             withCompletionHandler:^(BOOL success, NSError *error) {
+                                 if (success) {
+                                     // :)
+                                     NSLog(@"Now, we take your money");
+                                 }
+                                 else {
+                                     // :(
+                                     NSLog(@"Unfortunately, this app isn't much use if you don't log in");
+                                     NSLog(@"Error: %@",error);
+                                 }
+                             }];
+        
+    }
+   
 }
 
 - (void)didReceiveMemoryWarning {
