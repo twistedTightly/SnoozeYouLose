@@ -15,6 +15,7 @@
 		328F706D1A6C09900008B69F /* dollar-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F706B1A6C09900008B69F /* dollar-icon.png */; };
 		328F70701A6C0CE10008B69F /* SnoozeConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F706F1A6C0CE10008B69F /* SnoozeConfirmationViewController.m */; };
 		328F70731A6C0F5E0008B69F /* HurrayConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70721A6C0F5E0008B69F /* HurrayConfirmationViewController.m */; };
+		328F70751A6C167B0008B69F /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 328F70741A6C167B0008B69F /* arrow.png */; };
 		32B0FA771A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */; };
 		32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C21A6AE67D001F7264 /* TabBarViewController.m */; };
 		32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C51A6AE6DF001F7264 /* AlarmsTableTableViewController.m */; };
@@ -76,6 +77,7 @@
 		328F706F1A6C0CE10008B69F /* SnoozeConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnoozeConfirmationViewController.m; sourceTree = "<group>"; };
 		328F70711A6C0F5E0008B69F /* HurrayConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HurrayConfirmationViewController.h; sourceTree = "<group>"; };
 		328F70721A6C0F5E0008B69F /* HurrayConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HurrayConfirmationViewController.m; sourceTree = "<group>"; };
+		328F70741A6C167B0008B69F /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatDayOfWeekTableViewController.h; sourceTree = "<group>"; };
 		32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatDayOfWeekTableViewController.m; sourceTree = "<group>"; };
 		32EF89C11A6AE67D001F7264 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				328F70681A6BB7C30008B69F /* disconnect.png */,
 				6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */,
 				6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */,
+				328F70741A6C167B0008B69F /* arrow.png */,
 				32FE18411A6B3C6900CB17DA /* connect-to-venmo.png */,
 				32FE18331A6B34E800CB17DA /* active-profile.png */,
 				32FE18341A6B34E800CB17DA /* inactive-profile.png */,
@@ -377,6 +380,7 @@
 				32FE183B1A6B34E800CB17DA /* active-chart.png in Resources */,
 				65EF6B561A6C07AD008B3E8B /* registersound.wav in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
+				328F70751A6C167B0008B69F /* arrow.png in Resources */,
 				32FE183D1A6B34E800CB17DA /* inactive-clock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
