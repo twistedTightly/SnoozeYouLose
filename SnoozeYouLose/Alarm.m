@@ -7,6 +7,7 @@
 //
 
 #import "Alarm.h"
+#import <UIKit/UIKit.h>
 
 @implementation Alarm
 - (id)init {
@@ -38,6 +39,23 @@
     self.isOn = isOn;
     self.repeatDays = repeatDays;
     return self;
+}
+
+#pragma mark - Local notification
+- (void)scheduleLocalNotification {
+    
+//    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+//    localNotif.fireDate = self.alarmDate;
+//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+//    
+//    localNotif.alertBody = [NSString stringWithFormat:@"Alarm %@ ($%@)", self.friendDisplayName, self.snoozeCost];
+//    localNotif.soundName = UILocalNotificationDefaultSoundName;
+//    
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+}
+
+- (void)unscheduleLocalNotification {
+    
 }
 
 #pragma mark - Serialization
