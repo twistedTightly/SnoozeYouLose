@@ -24,7 +24,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+  
+
+   
     if([[Venmo sharedInstance] isSessionValid]) {
         NSLog(@"Session already valid");
         

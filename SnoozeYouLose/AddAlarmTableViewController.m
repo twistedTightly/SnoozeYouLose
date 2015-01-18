@@ -39,8 +39,8 @@
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
     
 
+  
 
-    
     
     
     
@@ -52,10 +52,10 @@
 
 -(void)savePressed {
 #warning: Actually save the alarm
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)cancelPressed {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

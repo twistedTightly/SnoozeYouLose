@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Alarms Table Table View Controller-->
+        <!--Alarms-->
         <scene sceneID="fiY-Mb-HY9">
             <objects>
                 <tableViewController id="mHn-n3-fGO" customClass="AlarmsTableTableViewController" sceneMemberID="viewController">
@@ -57,7 +57,7 @@
                             <outlet property="delegate" destination="mHn-n3-fGO" id="P9i-27-2HR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9th-M1-6wg">
+                    <navigationItem key="navigationItem" title="Alarms" id="9th-M1-6wg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UUR-Aw-uKg">
                             <connections>
                                 <action selector="addButtonPressed:" destination="mHn-n3-fGO" id="jpg-Mj-B1D"/>
