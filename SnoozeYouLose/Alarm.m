@@ -41,6 +41,10 @@
 
     localNotif.alertBody = [NSString stringWithFormat:@"Alarm %@ ($%@)", self.friendDisplayName, self.snoozeCost];
     localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.userInfo = @{
+                            @"friendDisplayName" : self.friendDisplayName,
+                            @"snoozeCost" : self.snoozeCost
+                            };
     
     self.notification = localNotif;
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
