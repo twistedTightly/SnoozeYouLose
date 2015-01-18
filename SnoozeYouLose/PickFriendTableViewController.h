@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
 
 @interface PickFriendTableViewController : UITableViewController
+
 @property(strong,nonatomic) NSMutableArray *friendsDisplayNames;
 @property(strong,nonatomic) NSMutableArray *friendsUserNames;
+
+@property (strong, nonatomic) Alarm *alarm;
 
 @end

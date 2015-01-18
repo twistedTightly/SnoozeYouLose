@@ -7,6 +7,7 @@
 //
 
 #import "PickFriendTableViewController.h"
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @interface PickFriendTableViewController ()
 
@@ -68,8 +69,8 @@
     NSLog(@"got here 1");
     // Initial authenticatio
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSNumber *userID = [defaults objectForKey:@"userID"];
-    NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/%@/friends?access_token=8JeYmc2CjWPyjWYRZXEL8KEFGV5yaDhA",userID];
+    NSString *userID = [defaults objectForKey:@"userID"];
+    NSString *urlReq = [NSString stringWithFormat:@"https://api.venmo.com/v1/users/%@/friends?access_token=%@", userID,[[Venmo sharedInstance] session].accessToken];
     NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlReq]
                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                   timeoutInterval:60.0];
@@ -127,7 +128,10 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.alarm.friendDisplayName = self.friendsDisplayNames[indexPath.row];
+    self.alarm.friendUserName = self.friendsUserNames[indexPath.row];
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

@@ -22,7 +22,8 @@ typedef NS_OPTIONS(NSUInteger, RepeatDayOfWeekT) {
 @interface Alarm : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSDate *alarmDate;
-@property (strong, nonatomic) NSString *friendName;
+@property (strong, nonatomic) NSString *friendDisplayName;
+@property (strong, nonatomic) NSString *friendUserName;
 @property (strong, nonatomic) NSNumber *snoozeCost;
 @property (nonatomic) BOOL isOn;
 @property (nonatomic) NSUInteger repeatDays;

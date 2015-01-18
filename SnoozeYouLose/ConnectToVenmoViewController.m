@@ -9,7 +9,6 @@
 #import "ConnectToVenmoViewController.h"
 #import <Venmo-iOS-SDK/Venmo.h>
 
-
 @interface ConnectToVenmoViewController ()
 
 @end
@@ -19,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.username = [[NSString alloc] init];
+    [self.connectToVenmoButton setUserInteractionEnabled:YES];
+    [self.connectToVenmoButton setEnabled:YES];
+    [self.connectToVenmoButton setHidden:NO];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,16 +31,16 @@
 }
 - (void)getUserIDWithCompletionHandler:(void (^)(NSData *data, BOOL isSuccessful, NSError *error))completionHandler {
     
-    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     
     // Initial authentication
-    NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/v1/me?access_token=8JeYmc2CjWPyjWYRZXEL8KEFGV5yaDhA"]
+    NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:
+                                               [NSURL URLWithString:
+                                                [NSString stringWithFormat:@"https://api.venmo.com/v1/me?access_token=%@", [[Venmo sharedInstance] session].accessToken]]
                                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                   timeoutInterval:60.0];
     
     initialAuthRequest.HTTPMethod = @"GET";
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
     
     // Kick off initial authentication
     NSURLSessionDataTask *initialAuthDataTask = [session dataTaskWithRequest:initialAuthRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -64,6 +67,9 @@
                          withCompletionHandler:^(BOOL success, NSError *error) {
                              if (success) {
                                  // :)
+                                 [self.connectToVenmoButton setUserInteractionEnabled:NO];
+                                 [self.connectToVenmoButton setEnabled:NO];
+                                 [self.connectToVenmoButton setHidden:YES];
                                  NSLog(@"Now, we take your money");
                         
                                  
@@ -74,8 +80,8 @@
                                          NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
                                                                                               options:kNilOptions
                                                                                                 error:&jsonerror];
-                                         NSNumber *userID = json[@"data"][@"user"][@"id"];
-                                         
+                                         NSString *userID = json[@"data"][@"user"][@"id"];
+                                         NSLog(@"user id is %@", userID);
                                          NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                                          [defaults setObject:userID forKey:@"userID"];
                                          [defaults synchronize];

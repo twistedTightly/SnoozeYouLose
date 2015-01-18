@@ -9,10 +9,14 @@
 #import "AddAlarmTableViewController.h"
 #import "SetSnoozeFeeViewController.h"
 #import "RepeatDayOfWeekTableViewController.h"
+#import "PickFriendTableViewController.h"
 
 @interface AddAlarmTableViewController ()
 
 @property (strong, nonatomic) Alarm *currentAlarm;
+@property (weak, nonatomic) IBOutlet UILabel *repeatLabel;
+@property (weak, nonatomic) IBOutlet UILabel *snoozeFeeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *buddyLabel;
 
 @end
 
@@ -41,7 +45,9 @@
     [cancelButton addTarget:self action:@selector(cancelPressed) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancelBarButton = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
     [self.navigationItem setLeftBarButtonItem:cancelBarButton];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     
 }
 
@@ -62,11 +68,12 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-#warning Add identifiers to segues in storyboard
     if ([segue.identifier isEqualToString:@"setSnoozeFeeSegue"]) {
         ((SetSnoozeFeeViewController *)segue.destinationViewController).alarm = self.currentAlarm;
     } else if ([segue.identifier isEqualToString:@"repeatDayOfWeekSegue"]) {
         ((RepeatDayOfWeekTableViewController *)segue.destinationViewController).alarm = self.currentAlarm;
+    } else if ([segue.identifier isEqualToString:@"pickFriendSegue"]) {
+        ((PickFriendTableViewController *)segue.destinationViewController).alarm = self.currentAlarm;
     }
 }
 
