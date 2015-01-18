@@ -27,6 +27,9 @@
 		3F2C827788979D8EA3C51196 /* libPods-SnoozeYouLose.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D11C8BB7607FA610EF3F048 /* libPods-SnoozeYouLose.a */; };
 		409629BF38B8FA090A5E631F /* libPods-SnoozeYouLoseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B5FF9462AA89BE5CC19452 /* libPods-SnoozeYouLoseTests.a */; };
 		658DB5431A6B5511006E2B89 /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 658DB5421A6B5511006E2B89 /* AlarmManager.m */; };
+		6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386101A6B748F008DD98B /* snoozeyoulose.png */; };
+		6A6386141A6B766A008DD98B /* dollar-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386131A6B766A008DD98B /* dollar-02.png */; };
+		6A6386161A6B773D008DD98B /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386151A6B773D008DD98B /* shadow.png */; };
 		6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0D71A6ADF3E00E8EA86 /* main.m */; };
 		6AE4F0DB1A6ADF3E00E8EA86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DA1A6ADF3E00E8EA86 /* AppDelegate.m */; };
 		6AE4F0E11A6ADF3E00E8EA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */; };
@@ -76,6 +79,9 @@
 		658DB5411A6B5511006E2B89 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
 		658DB5421A6B5511006E2B89 /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmManager.m; sourceTree = "<group>"; };
 		658DB5441A6B5B88006E2B89 /* venmo-secret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "venmo-secret.h"; sourceTree = "<group>"; };
+		6A6386101A6B748F008DD98B /* snoozeyoulose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snoozeyoulose.png; sourceTree = "<group>"; };
+		6A6386131A6B766A008DD98B /* dollar-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollar-02.png"; path = "../../../../Downloads/dollar-02.png"; sourceTree = "<group>"; };
+		6A6386151A6B773D008DD98B /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shadow.png; path = ../../../../Downloads/shadow.png; sourceTree = "<group>"; };
 		6AE4F0D21A6ADF3E00E8EA86 /* SnoozeYouLose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozeYouLose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE4F0D61A6ADF3E00E8EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE4F0D71A6ADF3E00E8EA86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -170,6 +176,9 @@
 				32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */,
 				32EF89D01A6AFC87001F7264 /* AddAlarmTableViewController.h */,
 				32EF89D11A6AFC87001F7264 /* AddAlarmTableViewController.m */,
+				6A6386101A6B748F008DD98B /* snoozeyoulose.png */,
+				6A6386131A6B766A008DD98B /* dollar-02.png */,
+				6A6386151A6B773D008DD98B /* shadow.png */,
 				32EF89CA1A6AEAD9001F7264 /* Alarm.h */,
 				32EF89CB1A6AEAD9001F7264 /* Alarm.m */,
 				658DB5411A6B5511006E2B89 /* AlarmManager.h */,
@@ -309,10 +318,13 @@
 				32FE183A1A6B34E800CB17DA /* inactive-profile.png in Resources */,
 				32FE183E1A6B34E800CB17DA /* active-clock.png in Resources */,
 				32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */,
+				6A6386161A6B773D008DD98B /* shadow.png in Resources */,
 				32FE18311A6B14D100CB17DA /* save.png in Resources */,
 				32FE18391A6B34E800CB17DA /* active-profile.png in Resources */,
 				32FE18421A6B3C6900CB17DA /* connect-to-venmo.png in Resources */,
 				32FE18321A6B14D100CB17DA /* cancel.png in Resources */,
+				6A6386141A6B766A008DD98B /* dollar-02.png in Resources */,
+				6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */,
 				32FE183B1A6B34E800CB17DA /* active-chart.png in Resources */,
 				6AE4F0E31A6ADF3E00E8EA86 /* Images.xcassets in Resources */,
 				32FE183D1A6B34E800CB17DA /* inactive-clock.png in Resources */,
@@ -529,6 +541,7 @@
 			baseConfigurationReference = 19776D65C84C3DDD164D8C52 /* Pods-SnoozeYouLose.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SnoozeYouLose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +553,7 @@
 			baseConfigurationReference = DCD0B53FAD4512507D22CAA3 /* Pods-SnoozeYouLose.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SnoozeYouLose/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
