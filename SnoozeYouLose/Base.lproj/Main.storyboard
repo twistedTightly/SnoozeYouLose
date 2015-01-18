@@ -76,6 +76,56 @@
             </objects>
             <point key="canvasLocation" x="1901" y="745"/>
         </scene>
+        <!--Alarm Response View Controller-->
+        <scene sceneID="O2v-OD-N3R">
+            <objects>
+                <viewController storyboardIdentifier="AlarmResponse" id="Mie-Rj-rZc" customClass="AlarmResponseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QPY-gk-cl5"/>
+                        <viewControllerLayoutGuide type="bottom" id="ex6-27-OXj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d5a-GQ-gLn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to turn off alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-Bt-mem">
+                                <rect key="frame" x="213" y="462" width="175" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ao-HE-yTZ">
+                                <rect key="frame" x="178" y="389" width="244" height="51"/>
+                                <state key="normal" backgroundImage="snooze.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="alarmSnoozed:" destination="Mie-Rj-rZc" eventType="touchUpInside" id="pp2-On-Q8h"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="3ao-HE-yTZ" secondAttribute="centerX" id="BhN-ax-fXz"/>
+                            <constraint firstAttribute="centerX" secondItem="nPf-Bt-mem" secondAttribute="centerX" constant="-0.5" id="nAa-ie-aYH"/>
+                            <constraint firstItem="ex6-27-OXj" firstAttribute="top" secondItem="3ao-HE-yTZ" secondAttribute="bottom" constant="160" id="x5l-GJ-N6C"/>
+                            <constraint firstItem="nPf-Bt-mem" firstAttribute="top" secondItem="3ao-HE-yTZ" secondAttribute="bottom" constant="22" id="ylD-uQ-j2n"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VHZ-5q-xzZ" appends="YES" id="2Sl-Vg-mVO"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sn3-Qa-mkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="VHZ-5q-xzZ">
+                    <connections>
+                        <action selector="alarmTurnedOff:" destination="Mie-Rj-rZc" id="qFl-AL-jF7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1936" y="1770"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="vgC-CM-xce">
             <objects>
@@ -414,7 +464,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="o6J-im-WYw" kind="show" id="bnW-zw-ufl"/>
+                                            <segue destination="o6J-im-WYw" kind="show" identifier="repeatDayOfWeekSegue" id="bnW-zw-ufl"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="CX7-uS-vqd" detailTextLabel="6jZ-Ew-wKM" style="IBUITableViewCellStyleValue1" id="wqD-eB-1fb">
@@ -437,7 +487,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="nzI-Hd-tEL" kind="show" id="JgP-x9-AZK"/>
+                                            <segue destination="nzI-Hd-tEL" kind="show" identifier="setSnoozeFeeSegue" id="JgP-x9-AZK"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="yGK-7i-K00" style="IBUITableViewCellStyleDefault" id="cEp-Xo-5eU">
@@ -499,5 +549,6 @@
         <image name="active-clock.png" width="25" height="25"/>
         <image name="active-profile.png" width="23" height="22"/>
         <image name="connect-to-venmo.png" width="292" height="62"/>
+        <image name="snooze.png" width="292" height="62"/>
     </resources>
 </document>
