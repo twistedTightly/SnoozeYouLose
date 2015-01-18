@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
 
 @interface RepeatDayOfWeekTableViewController : UITableViewController
+
+@property (strong, nonatomic) Alarm *alarm;
 
 @end
