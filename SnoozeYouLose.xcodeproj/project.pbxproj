@@ -28,7 +28,6 @@
 		409629BF38B8FA090A5E631F /* libPods-SnoozeYouLoseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74B5FF9462AA89BE5CC19452 /* libPods-SnoozeYouLoseTests.a */; };
 		658DB5431A6B5511006E2B89 /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 658DB5421A6B5511006E2B89 /* AlarmManager.m */; };
 		6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386101A6B748F008DD98B /* snoozeyoulose.png */; };
-		6A6386161A6B773D008DD98B /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386151A6B773D008DD98B /* shadow.png */; };
 		6A63861A1A6B8211008DD98B /* LaunchScreen_whole.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */; };
 		6A63861D1A6B8466008DD98B /* AlarmResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */; };
 		6A6386211A6B8CDD008DD98B /* load-screen-02-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386201A6B8CDD008DD98B /* load-screen-02-02.png */; };
@@ -82,7 +81,6 @@
 		658DB5411A6B5511006E2B89 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
 		658DB5421A6B5511006E2B89 /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmManager.m; sourceTree = "<group>"; };
 		6A6386101A6B748F008DD98B /* snoozeyoulose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snoozeyoulose.png; sourceTree = "<group>"; };
-		6A6386151A6B773D008DD98B /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shadow.png; path = ../../../../Downloads/shadow.png; sourceTree = "<group>"; };
 		6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_whole.xib; sourceTree = "<group>"; };
 		6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmResponseViewController.h; sourceTree = "<group>"; };
 		6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmResponseViewController.m; sourceTree = "<group>"; };
@@ -186,7 +184,6 @@
 				6A6386221A6B8EA8008DD98B /* snooze.png */,
 				32EF89D11A6AFC87001F7264 /* AddAlarmTableViewController.m */,
 				6A6386101A6B748F008DD98B /* snoozeyoulose.png */,
-				6A6386151A6B773D008DD98B /* shadow.png */,
 				32EF89CA1A6AEAD9001F7264 /* Alarm.h */,
 				32EF89CB1A6AEAD9001F7264 /* Alarm.m */,
 				658DB5411A6B5511006E2B89 /* AlarmManager.h */,
@@ -325,7 +322,6 @@
 				32FE183A1A6B34E800CB17DA /* inactive-profile.png in Resources */,
 				32FE183E1A6B34E800CB17DA /* active-clock.png in Resources */,
 				32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */,
-				6A6386161A6B773D008DD98B /* shadow.png in Resources */,
 				32FE18311A6B14D100CB17DA /* save.png in Resources */,
 				6A6386211A6B8CDD008DD98B /* load-screen-02-02.png in Resources */,
 				32FE18391A6B34E800CB17DA /* active-profile.png in Resources */,
