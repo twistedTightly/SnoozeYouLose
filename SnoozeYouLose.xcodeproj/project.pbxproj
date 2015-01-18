@@ -30,10 +30,10 @@
 		6A6386111A6B748F008DD98B /* snoozeyoulose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386101A6B748F008DD98B /* snoozeyoulose.png */; };
 		6A6386141A6B766A008DD98B /* dollar-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386131A6B766A008DD98B /* dollar-02.png */; };
 		6A6386161A6B773D008DD98B /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386151A6B773D008DD98B /* shadow.png */; };
-		6A6386181A6B81DB008DD98B /* load-screen-02-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386171A6B81DB008DD98B /* load-screen-02-02.png */; };
 		6A63861A1A6B8211008DD98B /* LaunchScreen_whole.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */; };
 		6A63861D1A6B8466008DD98B /* AlarmResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */; };
 		6A63861F1A6B86EB008DD98B /* snooze.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A63861E1A6B86EB008DD98B /* snooze.png */; };
+		6A6386211A6B8CDD008DD98B /* load-screen-02-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A6386201A6B8CDD008DD98B /* load-screen-02-02.png */; };
 		6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0D71A6ADF3E00E8EA86 /* main.m */; };
 		6AE4F0DB1A6ADF3E00E8EA86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DA1A6ADF3E00E8EA86 /* AppDelegate.m */; };
 		6AE4F0E11A6ADF3E00E8EA86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */; };
@@ -85,11 +85,11 @@
 		6A6386101A6B748F008DD98B /* snoozeyoulose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snoozeyoulose.png; sourceTree = "<group>"; };
 		6A6386131A6B766A008DD98B /* dollar-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dollar-02.png"; path = "../../../../Downloads/dollar-02.png"; sourceTree = "<group>"; };
 		6A6386151A6B773D008DD98B /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shadow.png; path = ../../../../Downloads/shadow.png; sourceTree = "<group>"; };
-		6A6386171A6B81DB008DD98B /* load-screen-02-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "load-screen-02-02.png"; path = "../../../../Downloads/load-screen-02-02.png"; sourceTree = "<group>"; };
 		6A6386191A6B8211008DD98B /* LaunchScreen_whole.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen_whole.xib; sourceTree = "<group>"; };
 		6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmResponseViewController.h; sourceTree = "<group>"; };
 		6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmResponseViewController.m; sourceTree = "<group>"; };
 		6A63861E1A6B86EB008DD98B /* snooze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snooze.png; path = ../../../../Downloads/snooze.png; sourceTree = "<group>"; };
+		6A6386201A6B8CDD008DD98B /* load-screen-02-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "load-screen-02-02.png"; sourceTree = "<group>"; };
 		6AE4F0D21A6ADF3E00E8EA86 /* SnoozeYouLose.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnoozeYouLose.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE4F0D61A6ADF3E00E8EA86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE4F0D71A6ADF3E00E8EA86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */,
 				32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */,
 				32EF89D01A6AFC87001F7264 /* AddAlarmTableViewController.h */,
+				6A6386201A6B8CDD008DD98B /* load-screen-02-02.png */,
 				32EF89D11A6AFC87001F7264 /* AddAlarmTableViewController.m */,
-				6A6386171A6B81DB008DD98B /* load-screen-02-02.png */,
 				6A6386101A6B748F008DD98B /* snoozeyoulose.png */,
 				6A6386131A6B766A008DD98B /* dollar-02.png */,
 				6A6386151A6B773D008DD98B /* shadow.png */,
@@ -326,12 +326,12 @@
 			files = (
 				6AE4F0E11A6ADF3E00E8EA86 /* Main.storyboard in Resources */,
 				32FE183A1A6B34E800CB17DA /* inactive-profile.png in Resources */,
-				6A6386181A6B81DB008DD98B /* load-screen-02-02.png in Resources */,
 				32FE183E1A6B34E800CB17DA /* active-clock.png in Resources */,
 				6A63861F1A6B86EB008DD98B /* snooze.png in Resources */,
 				32FE183C1A6B34E800CB17DA /* inactive-chart.png in Resources */,
 				6A6386161A6B773D008DD98B /* shadow.png in Resources */,
 				32FE18311A6B14D100CB17DA /* save.png in Resources */,
+				6A6386211A6B8CDD008DD98B /* load-screen-02-02.png in Resources */,
 				32FE18391A6B34E800CB17DA /* active-profile.png in Resources */,
 				6A63861A1A6B8211008DD98B /* LaunchScreen_whole.xib in Resources */,
 				32FE18421A6B3C6900CB17DA /* connect-to-venmo.png in Resources */,
