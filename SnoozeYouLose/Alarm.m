@@ -9,6 +9,12 @@
 #import "Alarm.h"
 #import <UIKit/UIKit.h>
 
+@interface Alarm ()
+
+@property (strong, nonatomic) UILocalNotification *notification;
+
+@end
+
 @implementation Alarm
 - (id)init {
     if(!self) {
@@ -21,41 +27,28 @@
     self.snoozeCost = [[NSNumber alloc] initWithInt:1];
     self.isOn = NO;
     self.repeatDays = kRepeatDayOfWeekNotSet;
+    self.notification = nil;
     return self;
     
-}
-- (id)initWithAlarmDate:(NSDate *)alarmDate
-      friendDisplayName:(NSString *)friendDisplayName
-         friendUserName:(NSString *)friendUserName
-             snoozeCost:(NSNumber *)snoozeCost
-                   isOn:(BOOL)isOn
-             repeatDays:(NSUInteger)repeatDays {
-    if (!self) {
-        self = [super init];
-    }
-    self.alarmDate = alarmDate;
-    self.friendDisplayName = friendDisplayName;
-    self.snoozeCost = snoozeCost;
-    self.isOn = isOn;
-    self.repeatDays = repeatDays;
-    return self;
 }
 
 #pragma mark - Local notification
 - (void)scheduleLocalNotification {
     
-//    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-//    localNotif.fireDate = self.alarmDate;
-//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
-//    
-//    localNotif.alertBody = [NSString stringWithFormat:@"Alarm %@ ($%@)", self.friendDisplayName, self.snoozeCost];
-//    localNotif.soundName = UILocalNotificationDefaultSoundName;
-//    
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    localNotif.fireDate = self.alarmDate;
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+
+    localNotif.alertBody = [NSString stringWithFormat:@"Alarm %@ ($%@)", self.friendDisplayName, self.snoozeCost];
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    
+    self.notification = localNotif;
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
 }
 
 - (void)unscheduleLocalNotification {
-    
+    [[UIApplication sharedApplication] cancelLocalNotification:self.notification];
+    self.notification = nil;
 }
 
 #pragma mark - Serialization
@@ -66,6 +59,7 @@
     [aCoder encodeObject:self.snoozeCost forKey:@"snoozeCost"];
     [aCoder encodeObject:[NSNumber numberWithBool:self.isOn] forKey:@"isOn"];
     [aCoder encodeObject:[NSNumber numberWithInteger:self.repeatDays] forKey:@"repeatDays"];
+    [aCoder encodeObject:self.notification forKey:@"notification"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
@@ -76,6 +70,7 @@
         self.snoozeCost = [aDecoder decodeObjectForKey:@"snoozeCost"];
         self.isOn = [[aDecoder decodeObjectForKey:@"isOn"] boolValue];
         self.repeatDays = [[aDecoder decodeObjectForKey:@"repeatDays"] integerValue];
+        self.notification = [aDecoder decodeObjectForKey:@"notification"];
     }
     
     return self;

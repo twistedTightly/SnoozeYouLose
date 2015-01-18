@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AlarmResponseViewController.h"
 
 @interface AppDelegate ()
 
@@ -35,6 +36,14 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     
+    NSLog(@"Notification received");
+    NSLog(@"%@", notification);
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    AlarmResponseViewController *vc = (AlarmResponseViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AlarmResponse"];
+    
+    //set the root controller to it
+    self.window.rootViewController = vc;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

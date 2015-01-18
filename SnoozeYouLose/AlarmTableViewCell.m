@@ -19,5 +19,9 @@
 
     // Configure the view for the selected state
 }
+- (IBAction)switchToggled:(UISwitch *)sender {
+    BOOL currentState = sender.on;
+    [self.delegate changeAlarmOnStateForItem:self To:currentState];
+}
 
 @end

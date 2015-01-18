@@ -32,7 +32,6 @@
     // Alarm turned off
     NSLog(@"Alarm turned off");
     self.alarmObject.isOn = NO;
-    
 }
 
 - (IBAction)alarmSnoozed:(id)sender {
@@ -80,7 +79,6 @@
 
     }
     [defaults synchronize];
-    
 }
 
 /*

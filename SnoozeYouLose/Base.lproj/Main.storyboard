@@ -18,7 +18,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="deviceRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="102" id="vAn-wE-W9u" customClass="AlarmTableViewCell">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="102" id="vAn-wE-W9u" customClass="AlarmTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vAn-wE-W9u" id="KRR-Bv-YAq">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -31,6 +31,9 @@
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Np-sr-9vC">
                                             <rect key="frame" x="543" y="35" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="switchToggled:" destination="vAn-wE-W9u" eventType="valueChanged" id="PJB-gK-OfH"/>
+                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYX-WL-MFy">
                                             <rect key="frame" x="115.5" y="65.5" width="19.5" height="20.5"/>
@@ -816,6 +819,6 @@
         <image name="snooze.png" width="292" height="62"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AaI-WU-SIV"/>
+        <segue reference="sdB-90-xzC"/>
     </inferredMetricsTieBreakers>
 </document>

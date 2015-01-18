@@ -10,7 +10,7 @@
 #import "AlarmTableViewCell.h"
 #import "AddAlarmTableViewController.h"
 
-@interface AlarmsTableTableViewController ()
+@interface AlarmsTableTableViewController () <AlarmTableViewCellDelegate>
 
 @end
 
@@ -84,6 +84,8 @@
         cell = [[AlarmTableViewCell alloc] init];
     }
     
+    cell.delegate = self;
+    
     Alarm *currentAlarm = self.alarmManager.alarms[indexPath.row];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterShortStyle;
@@ -91,8 +93,17 @@
     cell.timeLabel.text = [dateFormatter stringFromDate:currentAlarm.alarmDate];
     cell.friendLabel.text = currentAlarm.friendDisplayName;
     cell.snoozeCostLabel.text = [NSString stringWithFormat:@"$%@", currentAlarm.snoozeCost];
+    cell.onOffSwitch.on = currentAlarm.isOn;
     
     return cell;
+}
+
+#pragma mark - Alarm delegate
+- (void)changeAlarmOnStateForItem:(id)sender To:(BOOL)state {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    Alarm *currentAlarm = self.alarmManager.alarms[indexPath.row];
+    currentAlarm.isOn = state;
+    [self.alarmManager storeAlarms];
 }
 
 

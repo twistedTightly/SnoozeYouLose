@@ -12,6 +12,7 @@
 
 - (void)addAlarm:(Alarm *)alarm {
     // set local notification
+    [alarm scheduleLocalNotification];
     [self.alarms addObject:alarm];
     
     NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"alarmDate" ascending:YES];
@@ -20,6 +21,7 @@
 
 - (void)deleteAlarmAtIndex:(NSUInteger)index {
     // unset local notification
+    [self.alarms[index] unscheduleLocalNotification];
     [self.alarms removeObjectAtIndex:index];
 }
 
