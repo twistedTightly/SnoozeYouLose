@@ -17,9 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    CGRect imageRect = self.profileImageView.frame;
+    
+    self.profileImageView.layer.cornerRadius = imageRect.size.height / 2;
+    self.profileImageView.layer.masksToBounds = YES;
+    self.profileImageView.layer.borderWidth = 0.0f;
 }
 -(void)viewWillAppear:(BOOL)animated {
-    
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *username = [defaults objectForKey:@"username"];
@@ -27,7 +32,7 @@
     NSString *profile_image_url = [defaults objectForKey:@"profile_image_url"];
     if(username && displayName && profile_image_url) {
         //set username label here
-        [self.userNameLabel setText:username];
+        [self.userNameLabel setText:[NSString stringWithFormat:@"@%@", username]];
         //set display name here
         [self.displayNameLabel setText:displayName];
         
@@ -55,15 +60,18 @@
                 NSString *profile_image_url = user[@"profile_picture_url"];
                 [defaults setObject:profile_image_url forKey:@"profile_image_url"];
                 [defaults synchronize];
-                //set username label here
-                [self.userNameLabel setText:username];
-                //set display name here
-                [self.displayNameLabel setText:displayName];
                 
-                NSURL * imageURL = [NSURL URLWithString:profile_image_url];
-                NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-                UIImage * image = [UIImage imageWithData:imageData];
-                [self.profileImageView setImage:image];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //set username label here
+                    [self.userNameLabel setText:[NSString stringWithFormat:@"@%@", username]];
+                    //set display name here
+                    [self.displayNameLabel setText:displayName];
+                    
+                    NSURL * imageURL = [NSURL URLWithString:profile_image_url];
+                    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+                    UIImage * image = [UIImage imageWithData:imageData];
+                    [self.profileImageView setImage:image];
+                });
             }
             else {
                 NSLog(@"Error with getting profile info: %@",error);
