@@ -92,7 +92,7 @@
     NSString *displayName = [Venmo sharedInstance].session.user.displayName;
     NSString *note = nil;
     if(displayName) {
-       note = [NSString stringWithFormat:@"%@ hit the snooze button!!", displayName];
+       note = [NSString stringWithFormat:@"%@ is a lazy bum who hits the snooze button!!", displayName];
         
     }
     else {
@@ -132,13 +132,14 @@
     [defaults synchronize];
     [self performSegueWithIdentifier:@"goToSnoozeConfirmation" sender:self];
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"goToSnoozeConfirmation"]) {
         SnoozeConfirmationViewController *vc = (SnoozeConfirmationViewController *)segue.destinationViewController;
         [vc setDisplayName:self.alarmObject.friendDisplayName];
         [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
     }
-    else if ([segue.destinationViewController isEqualToString:@"goToHurray"]) {
+    else if ([segue.identifier isEqualToString:@"goToHurray"]) {
+        [self.alarmPlayer stop];
         HurrayConfirmationViewController *vc = (HurrayConfirmationViewController *)segue.destinationViewController;
         [vc setSnoozeFee:[NSString stringWithFormat:@"%@",self.alarmObject.snoozeCost]];
     }

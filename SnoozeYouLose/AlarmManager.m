@@ -27,16 +27,16 @@
 }
 
 - (void)storeAlarms {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
+    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarmsFile.dat"];
     [NSKeyedArchiver archiveRootObject:self.alarms toFile:alarmsFile];
 }
 
 - (void)retrieveStoredAlarms {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarms.dat"];
+    NSString *alarmsFile = [documentsDirectory stringByAppendingPathComponent:@"storedAlarmsFile.dat"];
     self.alarms = [NSKeyedUnarchiver unarchiveObjectWithFile:alarmsFile];
 }
 

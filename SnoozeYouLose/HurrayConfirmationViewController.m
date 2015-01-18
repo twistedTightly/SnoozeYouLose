@@ -7,6 +7,7 @@
 //
 
 #import "HurrayConfirmationViewController.h"
+#import "TabBarViewController.h"
 
 @interface HurrayConfirmationViewController ()
 
@@ -28,7 +29,12 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)exitScreen:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    TabBarViewController *vc = (TabBarViewController *)[storyboard instantiateViewControllerWithIdentifier:@"MainTabBarViewController"];
+    
+    //set the root controller to it
+    [[UIApplication sharedApplication] keyWindow].rootViewController = vc;
 }
 
 /*
