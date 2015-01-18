@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AST-g0-RLK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AST-g0-RLK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,6 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="102" id="vAn-wE-W9u" customClass="AlarmTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -42,6 +43,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -86,7 +88,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="inactive-profile.png" selectedImage="active-profile.png" id="NSP-zM-k4E"/>
+                    <tabBarItem key="tabBarItem" title="" image="active-profile.png" id="NSP-zM-k4E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Lj-WF-uh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,8 +106,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-ks-0gu">
-                                <rect key="frame" x="155" y="270" width="290" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1e-ks-0gu">
+                                <rect key="frame" x="154" y="269" width="292" height="62"/>
                                 <state key="normal" backgroundImage="connect-to-venmo.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -115,6 +117,20 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="b1e-ks-0gu" secondAttribute="centerY" constant="114" id="1pL-OR-ajU"/>
+                            <constraint firstAttribute="centerX" secondItem="b1e-ks-0gu" secondAttribute="centerX" id="5Ql-O3-cBT"/>
+                            <constraint firstAttribute="centerY" secondItem="b1e-ks-0gu" secondAttribute="centerY" id="acW-Sa-eIk"/>
+                            <constraint firstItem="b1e-ks-0gu" firstAttribute="height" secondItem="kG6-wQ-Mpx" secondAttribute="height" id="gnp-F0-BmI"/>
+                            <constraint firstAttribute="centerX" secondItem="b1e-ks-0gu" secondAttribute="centerX" id="yaD-t1-FMJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1pL-OR-ajU"/>
+                                <exclude reference="5Ql-O3-cBT"/>
+                                <exclude reference="gnp-F0-BmI"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tU9-Zl-u58" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="inactive-chart.png" selectedImage="active-chart.png" id="IdJ-kD-G1l"/>
+                    <tabBarItem key="tabBarItem" title="" image="active-chart.png" id="IdJ-kD-G1l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRg-qp-aOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,7 +180,7 @@
         <scene sceneID="N8J-rT-vbx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TLr-3z-XtN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="inactive-clock.png" selectedImage="active-clock.png" id="ucG-qU-RtJ"/>
+                    <tabBarItem key="tabBarItem" title="" image="active-clock.png" id="ucG-qU-RtJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRG-YS-LvI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -482,8 +498,5 @@
         <image name="active-clock.png" width="25" height="25"/>
         <image name="active-profile.png" width="23" height="22"/>
         <image name="connect-to-venmo.png" width="292" height="62"/>
-        <image name="inactive-chart.png" width="30" height="25"/>
-        <image name="inactive-clock.png" width="25" height="25"/>
-        <image name="inactive-profile.png" width="23" height="22"/>
     </resources>
 </document>

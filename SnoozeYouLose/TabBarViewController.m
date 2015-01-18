@@ -18,8 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //[[Venmo sharedInstance] logout];
-    // VENMO TESTING
     // Set Venmo payments to use the API by default, as opposed to switching to the app
     [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
     
