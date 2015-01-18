@@ -9,6 +9,8 @@
 #import "StatsViewController.h"
 
 @interface StatsViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *dollarsSentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *snoozesHitLabel;
 
 @end
 

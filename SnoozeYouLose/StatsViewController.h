@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface StatsViewController : UIViewController
-@property (strong,nonatomic) UILabel *dollarsSentLabel;
-@property (strong,nonatomic) UILabel *snoozesHitLabel;
+
 @end
