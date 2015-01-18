@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Alarm.h"
 #import <Venmo-iOS-SDK/Venmo.h>
+#import "SnoozeConfirmationViewController.h"
 @interface AlarmResponseViewController : UIViewController
 @property (strong,nonatomic) Alarm *alarmObject;
 @end
