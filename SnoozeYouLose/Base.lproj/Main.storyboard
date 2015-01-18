@@ -119,15 +119,6 @@
                                     <action selector="alarmSnoozed:" destination="Mie-Rj-rZc" eventType="touchUpInside" id="VQb-vL-0Hi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Maribeth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJO-jY-fxU">
-                                <rect key="frame" x="248" y="288" width="104" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lJO-jY-fxU" secondAttribute="height" multiplier="13:3" id="i9K-JM-pAv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to turn off alarm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-Bt-mem">
                                 <rect key="frame" x="232" y="554" width="137" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -151,6 +142,15 @@
                                     <constraint firstAttribute="height" constant="30" id="jkO-ec-s36"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To Maribeth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJO-jY-fxU">
+                                <rect key="frame" x="248" y="288" width="104" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lJO-jY-fxU" secondAttribute="height" multiplier="13:3" id="i9K-JM-pAv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -178,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="alarmFee" destination="xDG-uB-dvN" id="Iq6-du-wuB"/>
+                        <outlet property="friendName" destination="lJO-jY-fxU" id="Ani-an-Z2V"/>
                         <segue destination="0BD-nW-MQw" kind="presentation" identifier="goToSnoozeConfirmation" id="HIy-CV-zn0"/>
                     </connections>
                 </viewController>

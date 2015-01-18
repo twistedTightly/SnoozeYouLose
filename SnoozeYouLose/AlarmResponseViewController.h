@@ -13,7 +13,5 @@
 @interface AlarmResponseViewController : UIViewController
 
 @property (strong, nonatomic) Alarm *alarmObject;
-@property (strong, nonatomic) NSString *friendDisplayName;
-@property (strong, nonatomic) NSNumber *snoozeCost;
 
 @end
