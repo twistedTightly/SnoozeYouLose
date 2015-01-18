@@ -11,4 +11,4 @@ Podfile.lock
 
 # File with Venmo App Secret #
 ##############################
-AppDelegate.m
+SnoozeYouLose/venmo-secret.h
