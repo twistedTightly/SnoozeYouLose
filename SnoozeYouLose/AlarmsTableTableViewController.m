@@ -25,7 +25,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    
+    self.tableView.backgroundView = nil;
     
     //make + green in uppper right
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor colorWithRed:184.0f/255.0f green:233.0f/255.0f blue:134.0f/255.0f alpha:1.0f];
