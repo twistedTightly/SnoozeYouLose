@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		328F70611A6B857E0008B69F /* PickFriendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70601A6B857E0008B69F /* PickFriendTableViewController.m */; };
+		328F70641A6BA8D00008B69F /* ProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70631A6BA8D00008B69F /* ProfilePageViewController.m */; };
+		328F70671A6BAC6C0008B69F /* StatsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 328F70661A6BAC6C0008B69F /* StatsViewController.m */; };
 		32B0FA771A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */; };
 		32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C21A6AE67D001F7264 /* TabBarViewController.m */; };
 		32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EF89C51A6AE6DF001F7264 /* AlarmsTableTableViewController.m */; };
@@ -56,6 +58,10 @@
 		328F705E1A6B69DC0008B69F /* venmo-secret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "venmo-secret.h"; sourceTree = "<group>"; };
 		328F705F1A6B857E0008B69F /* PickFriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickFriendTableViewController.h; sourceTree = "<group>"; };
 		328F70601A6B857E0008B69F /* PickFriendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickFriendTableViewController.m; sourceTree = "<group>"; };
+		328F70621A6BA8D00008B69F /* ProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePageViewController.h; sourceTree = "<group>"; };
+		328F70631A6BA8D00008B69F /* ProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePageViewController.m; sourceTree = "<group>"; };
+		328F70651A6BAC6C0008B69F /* StatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatsViewController.h; sourceTree = "<group>"; };
+		328F70661A6BAC6C0008B69F /* StatsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatsViewController.m; sourceTree = "<group>"; };
 		32B0FA751A6B09D000B1560F /* RepeatDayOfWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatDayOfWeekTableViewController.h; sourceTree = "<group>"; };
 		32B0FA761A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepeatDayOfWeekTableViewController.m; sourceTree = "<group>"; };
 		32EF89C11A6AE67D001F7264 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 				32EF89C21A6AE67D001F7264 /* TabBarViewController.m */,
 				32FE18431A6B408300CB17DA /* ConnectToVenmoViewController.h */,
 				32FE18441A6B408300CB17DA /* ConnectToVenmoViewController.m */,
+				328F70621A6BA8D00008B69F /* ProfilePageViewController.h */,
+				328F70631A6BA8D00008B69F /* ProfilePageViewController.m */,
+				328F70651A6BAC6C0008B69F /* StatsViewController.h */,
+				328F70661A6BAC6C0008B69F /* StatsViewController.m */,
 				6AE4F0DF1A6ADF3E00E8EA86 /* Main.storyboard */,
 				6A63861B1A6B8466008DD98B /* AlarmResponseViewController.h */,
 				6A63861C1A6B8466008DD98B /* AlarmResponseViewController.m */,
@@ -421,6 +431,7 @@
 				32EF89C61A6AE6DF001F7264 /* AlarmsTableTableViewController.m in Sources */,
 				32EF89CC1A6AEAD9001F7264 /* Alarm.m in Sources */,
 				32B0FA771A6B09D000B1560F /* RepeatDayOfWeekTableViewController.m in Sources */,
+				328F70641A6BA8D00008B69F /* ProfilePageViewController.m in Sources */,
 				32EF89C31A6AE67D001F7264 /* TabBarViewController.m in Sources */,
 				328F70611A6B857E0008B69F /* PickFriendTableViewController.m in Sources */,
 				32FE182E1A6B0FC300CB17DA /* SetSnoozeFeeViewController.m in Sources */,
@@ -428,6 +439,7 @@
 				32EF89D21A6AFC87001F7264 /* AddAlarmTableViewController.m in Sources */,
 				6AE4F0D81A6ADF3E00E8EA86 /* main.m in Sources */,
 				32FE18451A6B408300CB17DA /* ConnectToVenmoViewController.m in Sources */,
+				328F70671A6BAC6C0008B69F /* StatsViewController.m in Sources */,
 				32EF89C91A6AE76C001F7264 /* AlarmTableViewCell.m in Sources */,
 				658DB5431A6B5511006E2B89 /* AlarmManager.m in Sources */,
 				6A63861D1A6B8466008DD98B /* AlarmResponseViewController.m in Sources */,
