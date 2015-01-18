@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //TODO: change this if this isn't what the label is supposed to be?
+    [self.alarmFee setText:[NSString stringWithFormat:@"$%@",self.alarmObject.snoozeCost]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,11 +31,56 @@
 - (IBAction)alarmTurnedOff:(id)sender {
     // Alarm turned off
     NSLog(@"Alarm turned off");
+    self.alarmObject.isOn = NO;
+    
 }
 
 - (IBAction)alarmSnoozed:(id)sender {
     // Send Venmo payment
-    NSLog(@"Pay a friend");
+    NSLog(@"Pay a friend with username:%@",self.alarmObject.friendUserName);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *displayName = [defaults objectForKey:@"display_name"];
+    NSString *note = nil;
+    if(displayName) {
+       note = [NSString stringWithFormat:@"%@ hit the snooze button!!", displayName];
+        
+    }
+    else {
+        note = @"Your friend hit the snooze button!!";
+    }
+    
+    [[Venmo sharedInstance] sendPaymentTo:self.alarmObject.friendUserName
+                                   amount:[self.alarmObject.snoozeCost integerValue]*100 // this is in cents!
+                                     note:note
+                        completionHandler:^(VENTransaction *transaction, BOOL success, NSError *error) {
+                            if (success) {
+                                NSLog(@"Transaction succeeded!");
+                            }
+                            else {
+                                NSLog(@"Transaction failed with error: %@", [error localizedDescription]);
+                            }
+                        }];
+    
+    
+    
+    //update snoozes and dollars sent
+    NSInteger dollarsSent = [defaults integerForKey:@"dollarsSent"];
+    NSInteger snoozesHit = [defaults integerForKey:@"snoozesHit"];
+    if(!(dollarsSent && snoozesHit)) {
+        [defaults setInteger:[self.alarmObject.snoozeCost integerValue] forKey:@"dollarsSent"];
+        [defaults setInteger:1 forKey:@"snoozesHit"];
+        //update this alarm object's fee and the label?
+    }
+    else {
+        dollarsSent = dollarsSent + [self.alarmObject.snoozeCost integerValue];
+        snoozesHit = snoozesHit + 1;
+        [defaults setInteger:dollarsSent forKey:@"dollarsSent"];
+        [defaults setInteger:snoozesHit forKey:@"snoozesHit"];
+        //update this alarm object's fee and the label?
+
+    }
+    [defaults synchronize];
+    
 }
 
 /*
