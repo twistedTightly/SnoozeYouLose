@@ -12,6 +12,6 @@
 #import "SnoozeConfirmationViewController.h"
 @interface AlarmResponseViewController : UIViewController
 
-@property (strong, nonatomic) Alarm *alarmObject;
+@property (nonatomic) NSUInteger indexOfAlarmInAlarmManager;
 
 @end
