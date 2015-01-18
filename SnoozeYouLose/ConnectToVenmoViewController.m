@@ -19,11 +19,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.username = [[NSString alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)getUserIDWithCompletionHandler:(void (^)(NSData *data, BOOL isSuccessful, NSError *error))completionHandler {
+    
+    
+    
+    // Initial authentication
+    NSMutableURLRequest *initialAuthRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/v1/me?access_token=8JeYmc2CjWPyjWYRZXEL8KEFGV5yaDhA"]
+                                                                      cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                  timeoutInterval:60.0];
+    
+    initialAuthRequest.HTTPMethod = @"GET";
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration ephemeralSessionConfiguration]];
+    
+    // Kick off initial authentication
+    NSURLSessionDataTask *initialAuthDataTask = [session dataTaskWithRequest:initialAuthRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        BOOL isGood = NO;
+        if (error) {
+            NSLog(@"Error when authenticating: %@", error);
+            isGood = NO;
+        }
+        else {
+            isGood = YES;
+
+        }
+        
+        completionHandler(data, isGood,error);
+    }];
+    
+    // Actually running it!
+
+    [initialAuthDataTask resume];
 }
 - (IBAction)connectButtonPressed:(id)sender {
     [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
@@ -32,7 +65,27 @@
                              if (success) {
                                  // :)
                                  NSLog(@"Now, we take your money");
-                                 [self dismissViewControllerAnimated:YES completion:nil];
+                        
+                                 
+                                 [self getUserIDWithCompletionHandler:^(NSData *data, BOOL isSuccessful, NSError *error) {
+                                     if(isSuccessful) {
+                                         
+                                         NSError* jsonerror;
+                                         NSDictionary* json = [NSJSONSerialization JSONObjectWithData:data
+                                                                                              options:kNilOptions
+                                                                                                error:&jsonerror];
+                                         NSNumber *userID = json[@"data"][@"user"][@"id"];
+                                         
+                                         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                                         [defaults setObject:userID forKey:@"userID"];
+                                         [defaults synchronize];
+                                         [self dismissViewControllerAnimated:YES completion:nil];
+                                     }
+                                     else {
+                                         NSLog(@"Error with getting user id: %@",error);
+                                     }
+                                     
+                                 }];
                              }
                              else {
                                  // :(
